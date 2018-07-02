@@ -1,1 +1,1289 @@
-!function(e,t){if("object"==typeof exports&&"object"==typeof module)module.exports=t(require("react"));else if("function"==typeof define&&define.amd)define(["react"],t);else{var n="object"==typeof exports?t(require("react")):t(e.react);for(var a in n)("object"==typeof exports?exports:e)[a]=n[a]}}(window,function(t){return function(e){var t={};function n(a){if(t[a])return t[a].exports;var r=t[a]={i:a,l:!1,exports:{}};return e[a].call(r.exports,r,r.exports,n),r.l=!0,r.exports}return n.m=e,n.c=t,n.d=function(e,t,a){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:a})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var a=Object.create(null);if(n.r(a),Object.defineProperty(a,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var r in e)n.d(a,r,function(t){return e[t]}.bind(null,r));return a},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="/",n(n.s=8)}([function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.UniqueIndex=function(){return isNaN(window.__BRAFT_MM_UNIQUE_INDEX__)?window.__BRAFT_MM_UNIQUE_INDEX__=1:window.__BRAFT_MM_UNIQUE_INDEX__+=1,window.__BRAFT_MM_UNIQUE_INDEX__}},function(e,n){e.exports=t},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default={remove:"删除",cancel:"取消",confirm:"确认",insert:"插入所选项目",width:"宽度",height:"高度",image:"图片",video:"视频",audio:"音频",embed:"嵌入式媒体",caption:"媒体库",dragTip:"点击或拖动文件至此",dropTip:"放开鼠标以上传",selectAll:"选择全部",deselect:"取消选择",removeSelected:"删除选中项目",externalInputPlaceHolder:"资源名称|资源地址",externalInputTip:"使用“|”分隔资源名称和资源地址",addLocalFile:"添加本地资源",addExternalSource:"添加网络资源",unnamedItem:"未命名项目",confirmInsert:"插入选中项目"}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default={remove:"删除",cancel:"取消",confirm:"确认",insert:"插入所选项目",width:"宽度",height:"高度",image:"图片",video:"视频",audio:"音频",embed:"嵌入式媒体",caption:"媒体库",dragTip:"点击或拖动文件至此",dropTip:"放开鼠标以上传",selectAll:"选择全部",deselect:"取消选择",removeSelected:"删除选中项目",externalInputPlaceHolder:"资源名称|资源地址",externalInputTip:"使用“|”分隔资源名称和资源地址",addLocalFile:"添加本地资源",addExternalSource:"添加网络资源",unnamedItem:"未命名项目",confirmInsert:"插入选中项目"}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default={remove:"Remove",cancel:"Cancel",confirm:"Confirm",insert:"Insert Selected Items",width:"Width",height:"Height",image:"Image",video:"Video",audio:"Audio",embed:"Embed",caption:"Media Library",dragTip:"Click Or Drag Files Here",dropTip:"Drop To Upload",selectAll:"Select All",deselect:"Deselect",removeSelected:"Remove Selected Items",externalInputPlaceHolder:"Source Name|Source URL",externalInputTip:'Split source name and source URL with "|", confirm by hit Enter.',addLocalFile:"Add from local",addExternalSource:"Add from Internet",unnamedItem:"Unnamed Item",confirmInsert:"Insert selected items"}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var a=i(n(4)),r=i(n(3)),l=i(n(2));function i(e){return e&&e.__esModule?e:{default:e}}t.default={en:a.default,zh:r.default,"zh-hant":l.default}},function(t,n,a){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var a in n)Object.prototype.hasOwnProperty.call(n,a)&&(e[a]=n[a])}return e},l=function(){function e(e,t){for(var n=0;n<t.length;n++){var a=t[n];a.enumerable=a.enumerable||!1,a.configurable=!0,"value"in a&&(a.writable=!0),Object.defineProperty(e,a.key,a)}}return function(t,n,a){return n&&e(t.prototype,n),a&&e(t,a),t}}();a(12);var i,o=a(1),s=(i=o)&&i.__esModule?i:{default:i},c=a(0);var u={image:"image/png,image/jpeg,image/gif,image/webp,image/apng,image/svg",video:"video/mp4",audio:"audio/mp3"},d=function(t){function n(t){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,n);var a=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(n.__proto__||Object.getPrototypeOf(n)).call(this,t));return a.toggleSelectItem=function(e){var t=e.currentTarget.dataset.id,n=a.controller.getMediaItem(t);if(!n)return!1;n.selected?a.props.onBeforeDeselect&&!1===a.props.onBeforeDeselect([n],a.controller.getItems())||(a.controller.deselectMediaItem(t),a.props.onDeselect&&a.props.onDeselect([n],a.controller.getItems())):a.props.onBeforeSelect&&!1===a.props.onBeforeSelect([n],a.controller.getItems())||(a.controller.selectMediaItem(t),a.props.onSelect&&a.props.onSelect([n],a.controller.getItems()))},a.removeItem=function(e){var t=e.currentTarget.dataset.id,n=a.controller.getMediaItem(t);if(!n)return!1;a.props.onBeforeRemove&&!1===a.props.onBeforeRemove([n],a.controller.getItems())||(a.controller.removeMediaItem(t),a.props.onRemove&&a.props.onRemove([n],a.controller.getItems())),e.stopPropagation()},a.removeSelectedItems=function(){var e=a.controller.getSelectedItems();a.props.onBeforeRemove&&!1===a.props.onBeforeRemove(e,a.controller.getItems())||(a.controller.removeSelectedItems(),a.props.onRemove&&a.props.onRemove(e,a.controller.getItems()))},a.handleDragLeave=function(e){a.dragCounter--,0===a.dragCounter&&a.setState({draging:!1})},a.handleDragDrop=function(e){a.dragCounter=0,a.setState({draging:!1})},a.handleDragEnter=function(t){e.preventDefault(),a.dragCounter++,a.setState({draging:!0})},a.reslovePickedFiles=function(e){e.persist(),a.controller.resolveFiles({files:e.target.files,onItemReady:function(e){var t=e.id;return a.controller.selectMediaItem(t)},onAllReady:function(){return e.target.value=null}},0,a.props.accepts)},a.inputExternal=function(e){a.setState({external:r({},a.state.external,{url:e.target.value})})},a.switchExternalType=function(e){a.setState({external:r({},a.state.external,{type:e.target.dataset.type})})},a.confirmAddExternal=function(e){if("button"===e.target.nodeName.toLowerCase()||13===e.keyCode){var t=a.state.external,n=t.url,r=t.type,l=(n=n.split("|")).length>1?n[0]:a.props.language.unnamedItem;n=n.length>1?n[1]:n[0];var i="IMAGE"===r?n:null;a.controller.addItems([{thumbnail:i,url:n,name:l,type:r,id:(new Date).getTime()+"_"+(0,c.UniqueIndex)(),uploading:!1,uploadProgress:1,selected:!0}]),a.setState({showExternalForm:!1,external:{url:"",type:"IMAGE"}})}},a.toggleExternalForm=function(){a.setState({showExternalForm:!a.state.showExternalForm})},a.cancelInsert=function(){a.props.onCancel&&a.props.onCancel()},a.confirmInsert=function(){var e=a.controller.getSelectedItems();if(a.props.onBeforeInsert){var t=a.props.onBeforeInsert(e);t&&t instanceof Array?a.props.onInsert&&a.props.onInsert(t):!1!==t&&a.props.onInsert&&a.props.onInsert(e)}else a.props.onInsert&&a.props.onInsert(e)},a.state={draging:!1,error:!1,confirmable:!1,external:{url:"",type:"IMAGE"},showExternalForm:!1,allowExternal:!1,items:[]},a.dragCounter=0,a.controller=a.props.controller,a.changeListenerId=a.controller.onChange(function(e){a.setState({items:e,confirmable:e.filter(function(e){return e.selected}).length}),a.props.onChange&&a.props.onChange(e)}),a}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(n,s.default.Component),l(n,[{key:"mapPropsToState",value:function(e){var t=e.accepts,n=e.externals;return{fileAccept:t?[t.image?t.image.accept||u.image:"",t.video?t.image.accept||u.video:"",t.audio?t.image.accept||u.audio:""].join(","):[u.image,u.video,u.audio].join(","),external:{url:"",type:n.image?"IMAGE":n.audio?"AUDIO":n.video?"VIDEO":n.embed?"EMBED":""},allowExternal:n&&(n.image||n.audio||n.video||n.embed)}}},{key:"componentDidMount",value:function(){this.setState(this.mapPropsToState(this.props))}},{key:"componentWillReceiveProps",value:function(e){this.setState(this.mapPropsToState(e))}},{key:"componentWillUnmount",value:function(){this.controller.offChange(this.changeListenerId)}},{key:"render",value:function(){var e=this.props,t=e.language,n=e.externals,a=(e.accepts,this.state),r=a.items,l=a.draging,i=a.confirmable,o=a.external,c=a.showExternalForm,u=a.allowExternal;return s.default.createElement("div",{className:"braft-finder"},s.default.createElement("div",{onDragEnter:this.handleDragEnter,onDragLeave:this.handleDragLeave,onDrop:this.handleDragDrop,className:"bf-uploader"},s.default.createElement("div",{className:"bf-drag-uploader "+(l||!r.length?"active ":" ")+(l?"draging":"")},s.default.createElement("span",{className:"bf-drag-tip"},s.default.createElement("input",{accept:this.fileAccept,onChange:this.reslovePickedFiles,multiple:!0,type:"file"}),l?t.dropTip:t.dragTip)),r.length?s.default.createElement("div",{className:"bf-list-wrap"},s.default.createElement("div",{className:"bf-list-tools"},s.default.createElement("span",{onClick:this.controller.selectAllItems,className:"bf-select-all"},s.default.createElement("i",{className:"braft-icon-done"})," ",t.selectAll),s.default.createElement("span",{onClick:this.controller.deselectAllItems,disabled:!i,className:"bf-deselect-all"},s.default.createElement("i",{className:"braft-icon-close"})," ",t.deselect),s.default.createElement("span",{onClick:this.removeSelectedItems,disabled:!i,className:"bf-remove-selected"},s.default.createElement("i",{className:"braft-icon-bin"})," ",t.removeSelected)),this.buildMediaList()):null,c&&u?s.default.createElement("div",{className:"bf-add-external"},s.default.createElement("div",{className:"bf-external-form"},s.default.createElement("div",{className:"bf-external-input"},s.default.createElement("div",null,s.default.createElement("input",{onKeyDown:this.confirmAddExternal,value:o.url,onChange:this.inputExternal,placeholder:t.externalInputPlaceHolder})),s.default.createElement("button",{type:"button",onClick:this.confirmAddExternal,disabled:!o.url.trim().length},t.confirm)),s.default.createElement("div",{"data-type":o.type,className:"bf-switch-external-type"},n.image?s.default.createElement("button",{type:"button",onClick:this.switchExternalType,"data-type":"IMAGE"},t.image):null,n.audio?s.default.createElement("button",{type:"button",onClick:this.switchExternalType,"data-type":"AUDIO"},t.audio):null,n.video?s.default.createElement("button",{type:"button",onClick:this.switchExternalType,"data-type":"VIDEO"},t.video):null,n.embed?s.default.createElement("button",{type:"button",onClick:this.switchExternalType,"data-type":"EMBED"},t.embed):null),s.default.createElement("span",{className:"bf-external-tip"},t.externalInputTip))):null),s.default.createElement("footer",{className:"bf-manager-footer"},s.default.createElement("div",{className:"pull-left"},u?s.default.createElement("span",{onClick:this.toggleExternalForm,className:"bf-toggle-external-form"},c?s.default.createElement("span",{className:"bf-bottom-text"},s.default.createElement("i",{className:"braft-icon-add"})," ",t.addLocalFile):s.default.createElement("span",{className:"bf-bottom-text"},s.default.createElement("i",{className:"braft-icon-add"})," ",t.addExternalSource)):null),s.default.createElement("div",{className:"pull-right"},s.default.createElement("button",{onClick:this.confirmInsert,className:"button button-insert",disabled:!i},t.insert),s.default.createElement("button",{onClick:this.cancel,className:"button button-cancel"},t.cancel))))}},{key:"buildMediaList",value:function(){var e=this;return s.default.createElement("ul",{className:"bf-list"},s.default.createElement("li",{className:"bf-add-item"},s.default.createElement("i",{className:"braft-icon-add"}),s.default.createElement("input",{accept:this.fileAccept,onChange:this.reslovePickedFiles,multiple:!0,type:"file"})),this.state.items.map(function(t,n){var a=null,r=t.uploading&&!e.props.hideProgress?s.default.createElement("div",{className:"bf-item-uploading"},s.default.createElement("div",{className:"bf-item-uploading-bar",style:{width:t.uploadProgress/1+"%"}})):"";switch(t.type){case"IMAGE":a=s.default.createElement("div",{className:"bf-image"},r,s.default.createElement("img",{src:t.thumbnail||t.url}));break;case"VIDEO":a=s.default.createElement("div",{className:"bf-icon bf-video",title:t.url},r,s.default.createElement("i",{className:"braft-icon-film"}),s.default.createElement("span",null,t.name||t.url));break;case"AUDIO":a=s.default.createElement("div",{className:"bf-icon bf-audio",title:t.url},r,s.default.createElement("i",{className:"braft-icon-music"}),s.default.createElement("span",null,t.name||t.url));break;case"EMBED":a=s.default.createElement("div",{className:"bf-icon bf-embed",title:t.url},r,s.default.createElement("i",{className:"braft-icon-code"}),s.default.createElement("span",null,t.name||e.props.language.embed));break;default:a=s.default.createElement("a",{className:"bf-icon bf-file",title:t.url,href:t.url},r,s.default.createElement("i",{className:"braft-icon-file-text"}),s.default.createElement("span",null,t.name||t.url))}var l=["bf-item"];return t.selected&&l.push("active"),t.uploading&&l.push("uploading"),t.error&&l.push("error"),s.default.createElement("li",{key:n,title:t.name,"data-id":t.id,className:l.join(" "),onClick:e.toggleSelectItem},a,s.default.createElement("span",{"data-id":t.id,onClick:e.removeItem,className:"bf-item-remove braft-icon-close"}),s.default.createElement("span",{className:"bf-item-title"},t.name))}))}}]),n}();d.defaultProps={accepts:{image:!0,video:!0,audio:!0,embed:!0},externals:{image:!0,video:!0,audio:!0,embed:!0}},n.default=d},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var a=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var a in n)Object.prototype.hasOwnProperty.call(n,a)&&(e[a]=n[a])}return e},r=n(0);function l(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var i=function(){return!0},o=function(){var e=this;this.setProps=function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};e.items=t.items||e.items||[],e.uploadFn=t.uploader,e.validateFn=t.validator||i},this.getMediaItem=function(t){return e.items.find(function(e){return e.id===t})},this.getSelectedItems=function(){return e.items.filter(function(e){return e.selected})},this.getItems=function(){return e.items},this.setItems=function(t){e.items=t.map(function(e){return a({},e,{id:e.id.toString()})})||[],e.applyChange(),e.uploadItems()},this.addMediaItem=function(t){e.addItems([t])},this.addItems=function(t){e.items=[].concat(l(e.items),l(t.map(function(e){return a({},e,{id:e.id.toString()})}))),e.applyChange(),e.uploadItems()},this.selectMediaItem=function(t){var n=e.getMediaItem(t);if(n&&(n.uploading||n.error))return!1;e.setMediaItemState(t,{selected:!0})},this.selectAllItems=function(){e.items=e.items.filter(function(e){return!e.error&&!e.uploading}).map(function(e){return a({},e,{selected:!0})}),e.applyChange()},this.deselectMediaItem=function(t){e.setMediaItemState(t,{selected:!1})},this.deselectAllItems=function(){e.items=e.items.map(function(e){return a({},e,{selected:!1})}),e.applyChange()},this.removeMediaItem=function(t){e.items=e.items.filter(function(e){return e.id!==t}),e.applyChange()},this.removeItems=function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[];e.items=e.items.filter(function(e){return!t.includes(e.id)}),e.applyChange()},this.removeSelectedItems=function(){e.items=e.items.filter(function(e){return!e.selected}),e.applyChange()},this.removeErrorItems=function(){e.items=e.items.filter(function(e){return!e.error}),e.applyChange()},this.removeAllItems=function(){e.items=[],e.applyChange()},this.setMediaItemState=function(t,n){e.items=e.items.map(function(e){return e.id===t?a({},e,n):e}),e.applyChange()},this.reuploadErrorItems=function(){e.uploadItems(!0)},this.uploadItems=function(){var t=arguments.length>0&&void 0!==arguments[0]&&arguments[0];e.items.forEach(function(n,a){if(n.uploading||n.url)return!1;if(!t&&n.error)return!1;if("IMAGE"===n.type)e.createThumbnail(n),e.uploadFn=e.uploadFn||e.createInlineImage;else if(!e.uploadFn)return e.setMediaItemState(n.id,{error:1}),!1;e.setMediaItemState(n.id,{uploading:!0,uploadProgress:0,error:0}),e.uploadFn({id:n.id,file:n.file,success:function(t){e.handleUploadSuccess(n.id,t)},progress:function(t){e.setMediaItemState(n.id,{uploading:!0,uploadProgress:t})},error:function(t){e.setMediaItemState(n.id,{uploading:!1,error:2})}})})},this.createThumbnail=function(t){var n=t.id,a=t.file;e.compressImage({url:URL.createObjectURL(a),width:226,height:226,success:function(t){e.setMediaItemState(n,{thumbnail:t.url})}})},this.createInlineImage=function(t){e.compressImage({url:URL.createObjectURL(t.file),width:1280,height:800,success:function(e){t.success({url:e.url})},error:function(e){t.error(e)}})},this.handleUploadSuccess=function(t,n){e.setMediaItemState(t,a({},n,{file:null,uploadProgress:1,uploading:!1,selected:!1}));var r=e.getMediaItem(n.id||t);r.onReady&&r.onReady(r)},this.compressImage=function(e){var t=new Image,n=document.createElement("canvas");t.src=e.url,t.onload=function(){var t=1;if(!(this.width>e.width||this.height>e.height))return e.success({url:e.url,width:this.width,height:this.height}),!1;t=this.width>this.height?e.width/this.width:e.height/this.height,n.width=this.width*t,n.height=this.height*t,n.getContext("2d").drawImage(this,0,0,n.width,n.height),e.success({url:n.toDataURL("image/png",1),width:n.width,height:n.height})},t.onerror=function(t){e.error&&e.error(t)}},this.applyChange=function(){e.changeListeners.forEach(function(t){return(0,t.callback)(e.items)})},this.uploadImage=function(t,n){var a=(new Date).getTime()+"_"+(0,r.UniqueIndex)();e.addMediaItem({type:"IMAGE",id:a,file:t,name:a,size:t.size,uploadProgress:0,uploading:!1,selected:!1,error:0,onReady:n})},this.uploadImageRecursively=function(t,n){var a=arguments.length>2&&void 0!==arguments[2]?arguments[2]:0;t[a]&&t[a].type.indexOf("image")>-1?e.uploadImage(t[a],function(r){n&&n(r),a<t.length-1&&e.uploadImageRecursively(t,n,a+1)}):a<t.length-1&&e.uploadImageRecursively(t,n,a+1)},this.resolveFiles=function(t,n,a){if(n<t.files.length){if(e.validateFn(t.files[n])){var l={id:(new Date).getTime()+"_"+(0,r.UniqueIndex)(),file:t.files[n],name:t.files[n].name,size:t.files[n].size,uploadProgress:0,uploading:!1,selected:!1,error:0,onReady:function(e){t.onItemReady&&t.onItemReady(e)}};0===t.files[n].type.indexOf("image/")&&a.image?(l.type="IMAGE",e.addMediaItem(l)):0===t.files[n].type.indexOf("video/")&&a.video?(l.type="VIDEO",e.addMediaItem(l)):0===t.files[n].type.indexOf("audio/")&&a.audio&&(l.type="AUDIO",e.addMediaItem(l))}setTimeout(function(){e.resolveFiles(t,n+1,a)},60)}else t.onAllReady&&t.onAllReady()},this.onChange=function(t){var n=(0,r.UniqueIndex)();return e.changeListeners.push({id:n,callback:t}),n},this.offChange=function(t){e.changeListeners=e.changeListeners.filter(function(e){return e.id!==t})}};t.default=function e(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),o.call(this),this.items=t.items||[],this.uploadFn=t.uploader,this.validateFn=t.validator||i,this.changeListeners=[]}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var a=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var a in n)Object.prototype.hasOwnProperty.call(n,a)&&(e[a]=n[a])}return e},r=s(n(1)),l=s(n(7)),i=s(n(6)),o=s(n(5));function s(e){return e&&e.__esModule?e:{default:e}}t.default=function(e){var t=new l.default(e);return t.ReactComponent=function(){var n=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},l=a({},e,n),s=l.language&&o.default[l.language]||o.default.zh;return r.default.createElement(i.default,a({},l,{language:s,controller:t}))},t}},,,,function(e,t){}])});
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory(require("react"));
+	else if(typeof define === 'function' && define.amd)
+		define(["react"], factory);
+	else {
+		var a = typeof exports === 'object' ? factory(require("react")) : factory(root["react"]);
+		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
+	}
+})(window, function(__WEBPACK_EXTERNAL_MODULE__1__) {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var UniqueIndex = exports.UniqueIndex = function UniqueIndex() {
+
+  if (isNaN(window.__BRAFT_MM_UNIQUE_INDEX__)) {
+    window.__BRAFT_MM_UNIQUE_INDEX__ = 1;
+  } else {
+    window.__BRAFT_MM_UNIQUE_INDEX__ += 1;
+  }
+
+  return window.__BRAFT_MM_UNIQUE_INDEX__;
+};
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  remove: '删除',
+  cancel: '取消',
+  confirm: '确认',
+  insert: '插入所选项目',
+  width: '宽度',
+  height: '高度',
+  image: '图片',
+  video: '视频',
+  audio: '音频',
+  embed: '嵌入式媒体',
+  caption: '媒体库',
+  dragTip: '点击或拖动文件至此',
+  dropTip: '放开鼠标以上传',
+  selectAll: '选择全部',
+  deselect: '取消选择',
+  removeSelected: '删除选中项目',
+  externalInputPlaceHolder: '资源名称|资源地址',
+  externalInputTip: '使用“|”分隔资源名称和资源地址',
+  addLocalFile: '添加本地资源',
+  addExternalSource: '添加网络资源',
+  unnamedItem: '未命名项目',
+  confirmInsert: '插入选中项目'
+};
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  remove: '删除',
+  cancel: '取消',
+  confirm: '确认',
+  insert: '插入所选项目',
+  width: '宽度',
+  height: '高度',
+  image: '图片',
+  video: '视频',
+  audio: '音频',
+  embed: '嵌入式媒体',
+  caption: '媒体库',
+  dragTip: '点击或拖动文件至此',
+  dropTip: '放开鼠标以上传',
+  selectAll: '选择全部',
+  deselect: '取消选择',
+  removeSelected: '删除选中项目',
+  externalInputPlaceHolder: '资源名称|资源地址',
+  externalInputTip: '使用“|”分隔资源名称和资源地址',
+  addLocalFile: '添加本地资源',
+  addExternalSource: '添加网络资源',
+  unnamedItem: '未命名项目',
+  confirmInsert: '插入选中项目'
+};
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  remove: 'Remove',
+  cancel: 'Cancel',
+  confirm: 'Confirm',
+  insert: 'Insert Selected Items',
+  width: 'Width',
+  height: 'Height',
+  image: 'Image',
+  video: 'Video',
+  audio: 'Audio',
+  embed: 'Embed',
+  caption: 'Media Library',
+  dragTip: 'Click Or Drag Files Here',
+  dropTip: 'Drop To Upload',
+  selectAll: 'Select All',
+  deselect: 'Deselect',
+  removeSelected: 'Remove Selected Items',
+  externalInputPlaceHolder: 'Source Name|Source URL',
+  externalInputTip: 'Split source name and source URL with "|", confirm by hit Enter.',
+  addLocalFile: 'Add from local',
+  addExternalSource: 'Add from Internet',
+  unnamedItem: 'Unnamed Item',
+  confirmInsert: 'Insert selected items'
+};
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _en = __webpack_require__(4);
+
+var _en2 = _interopRequireDefault(_en);
+
+var _zh = __webpack_require__(3);
+
+var _zh2 = _interopRequireDefault(_zh);
+
+var _zhHant = __webpack_require__(2);
+
+var _zhHant2 = _interopRequireDefault(_zhHant);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  "en": _en2.default,
+  "zh": _zh2.default,
+  "zh-hant": _zhHant2.default
+};
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+__webpack_require__(12);
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _base = __webpack_require__(0);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var defaultAccepts = {
+  'image': 'image/png,image/jpeg,image/gif,image/webp,image/apng,image/svg',
+  'video': 'video/mp4',
+  'audio': 'audio/mp3'
+};
+
+var BraftFinderView = function (_React$Component) {
+  _inherits(BraftFinderView, _React$Component);
+
+  function BraftFinderView(props) {
+    _classCallCheck(this, BraftFinderView);
+
+    var _this = _possibleConstructorReturn(this, (BraftFinderView.__proto__ || Object.getPrototypeOf(BraftFinderView)).call(this, props));
+
+    _this.toggleSelectItem = function (event) {
+
+      var itemId = event.currentTarget.dataset.id;
+      var item = _this.controller.getMediaItem(itemId);
+
+      if (!item) {
+        return false;
+      }
+
+      if (item.selected) {
+
+        if (!_this.props.onBeforeDeselect || _this.props.onBeforeDeselect([item], _this.controller.getItems()) !== false) {
+          _this.controller.deselectMediaItem(itemId);
+          _this.props.onDeselect && _this.props.onDeselect([item], _this.controller.getItems());
+        }
+      } else {
+
+        if (!_this.props.onBeforeSelect || _this.props.onBeforeSelect([item], _this.controller.getItems()) !== false) {
+          _this.controller.selectMediaItem(itemId);
+          _this.props.onSelect && _this.props.onSelect([item], _this.controller.getItems());
+        }
+      }
+    };
+
+    _this.removeItem = function (event) {
+
+      var itemId = event.currentTarget.dataset.id;
+      var item = _this.controller.getMediaItem(itemId);
+
+      if (!item) {
+        return false;
+      }
+
+      if (!_this.props.onBeforeRemove || _this.props.onBeforeRemove([item], _this.controller.getItems()) !== false) {
+        _this.controller.removeMediaItem(itemId);
+        _this.props.onRemove && _this.props.onRemove([item], _this.controller.getItems());
+      }
+
+      event.stopPropagation();
+    };
+
+    _this.removeSelectedItems = function () {
+
+      var selectedItems = _this.controller.getSelectedItems();
+
+      if (!_this.props.onBeforeRemove || _this.props.onBeforeRemove(selectedItems, _this.controller.getItems()) !== false) {
+        _this.controller.removeSelectedItems();
+        _this.props.onRemove && _this.props.onRemove(selectedItems, _this.controller.getItems());
+      }
+    };
+
+    _this.handleDragLeave = function (event) {
+      _this.dragCounter--;
+      _this.dragCounter === 0 && _this.setState({
+        draging: false
+      });
+    };
+
+    _this.handleDragDrop = function (event) {
+      _this.dragCounter = 0;
+      _this.setState({ draging: false });
+    };
+
+    _this.handleDragEnter = function (event) {
+      e.preventDefault();
+      _this.dragCounter++;
+      _this.setState({ draging: true });
+    };
+
+    _this.reslovePickedFiles = function (event) {
+
+      event.persist();
+
+      _this.controller.resolveFiles({
+        files: event.target.files,
+        onItemReady: function onItemReady(_ref) {
+          var id = _ref.id;
+          return _this.controller.selectMediaItem(id);
+        },
+        onAllReady: function onAllReady() {
+          return event.target.value = null;
+        }
+      }, 0, _this.props.accepts);
+    };
+
+    _this.inputExternal = function (event) {
+      _this.setState({
+        external: _extends({}, _this.state.external, {
+          url: event.target.value
+        })
+      });
+    };
+
+    _this.switchExternalType = function (event) {
+      _this.setState({
+        external: _extends({}, _this.state.external, { type: event.target.dataset.type })
+      });
+    };
+
+    _this.confirmAddExternal = function (event) {
+
+      if (event.target.nodeName.toLowerCase() === 'button' || event.keyCode === 13) {
+        var _this$state$external = _this.state.external,
+            url = _this$state$external.url,
+            type = _this$state$external.type;
+
+        url = url.split('|');
+        var name = url.length > 1 ? url[0] : _this.props.language.unnamedItem;
+        url = url.length > 1 ? url[1] : url[0];
+        var thumbnail = type === 'IMAGE' ? url : null;
+
+        _this.controller.addItems([{
+          thumbnail: thumbnail, url: url, name: name, type: type,
+          id: new Date().getTime() + '_' + (0, _base.UniqueIndex)(),
+          uploading: false,
+          uploadProgress: 1,
+          selected: true
+        }]);
+
+        _this.setState({
+          showExternalForm: false,
+          external: {
+            url: '',
+            type: 'IMAGE'
+          }
+        });
+      }
+    };
+
+    _this.toggleExternalForm = function () {
+      _this.setState({
+        showExternalForm: !_this.state.showExternalForm
+      });
+    };
+
+    _this.cancelInsert = function () {
+      _this.props.onCancel && _this.props.onCancel();
+    };
+
+    _this.confirmInsert = function () {
+
+      var selectedItems = _this.controller.getSelectedItems();
+
+      if (_this.props.onBeforeInsert) {
+
+        var filteredItems = _this.props.onBeforeInsert(selectedItems);
+
+        if (filteredItems && filteredItems instanceof Array) {
+          _this.props.onInsert && _this.props.onInsert(filteredItems);
+        } else if (filteredItems !== false) {
+          _this.props.onInsert && _this.props.onInsert(selectedItems);
+        }
+      } else {
+        _this.props.onInsert && _this.props.onInsert(selectedItems);
+      }
+    };
+
+    _this.state = {
+      draging: false,
+      error: false,
+      confirmable: false,
+      external: {
+        url: '',
+        type: 'IMAGE'
+      },
+      showExternalForm: false,
+      allowExternal: false,
+      items: []
+    };
+
+    _this.dragCounter = 0;
+    _this.controller = _this.props.controller;
+
+    _this.changeListenerId = _this.controller.onChange(function (items) {
+      _this.setState({ items: items, confirmable: items.filter(function (_ref2) {
+          var selected = _ref2.selected;
+          return selected;
+        }).length });
+      _this.props.onChange && _this.props.onChange(items);
+    });
+
+    return _this;
+  }
+
+  _createClass(BraftFinderView, [{
+    key: 'mapPropsToState',
+    value: function mapPropsToState(props) {
+      var accepts = props.accepts,
+          externals = props.externals;
+
+
+      var fileAccept = !accepts ? [defaultAccepts.image, defaultAccepts.video, defaultAccepts.audio].join(',') : [accepts.image ? accepts.image.accept || defaultAccepts.image : '', accepts.video ? accepts.image.accept || defaultAccepts.video : '', accepts.audio ? accepts.image.accept || defaultAccepts.audio : ''].join(',');
+
+      var external = {
+        url: '',
+        type: externals.image ? 'IMAGE' : externals.audio ? 'AUDIO' : externals.video ? 'VIDEO' : externals.embed ? 'EMBED' : ''
+      };
+
+      return {
+        fileAccept: fileAccept,
+        external: external,
+        allowExternal: externals && (externals.image || externals.audio || externals.video || externals.embed)
+      };
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+
+      this.setState(this.mapPropsToState(this.props));
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      this.setState(this.mapPropsToState(nextProps));
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.controller.offChange(this.changeListenerId);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          language = _props.language,
+          externals = _props.externals,
+          accepts = _props.accepts;
+      var _state = this.state,
+          items = _state.items,
+          draging = _state.draging,
+          confirmable = _state.confirmable,
+          external = _state.external,
+          showExternalForm = _state.showExternalForm,
+          allowExternal = _state.allowExternal;
+
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'braft-finder' },
+        _react2.default.createElement(
+          'div',
+          {
+            onDragEnter: this.handleDragEnter,
+            onDragLeave: this.handleDragLeave,
+            onDrop: this.handleDragDrop,
+            className: 'bf-uploader'
+          },
+          _react2.default.createElement(
+            'div',
+            { className: "bf-drag-uploader " + (draging || !items.length ? 'active ' : ' ') + (draging ? 'draging' : '') },
+            _react2.default.createElement(
+              'span',
+              { className: 'bf-drag-tip' },
+              _react2.default.createElement('input', { accept: this.fileAccept, onChange: this.reslovePickedFiles, multiple: true, type: 'file' }),
+              draging ? language.dropTip : language.dragTip
+            )
+          ),
+          items.length ? _react2.default.createElement(
+            'div',
+            { className: 'bf-list-wrap' },
+            _react2.default.createElement(
+              'div',
+              { className: 'bf-list-tools' },
+              _react2.default.createElement(
+                'span',
+                { onClick: this.controller.selectAllItems, className: 'bf-select-all' },
+                _react2.default.createElement('i', { className: 'braft-icon-done' }),
+                ' ',
+                language.selectAll
+              ),
+              _react2.default.createElement(
+                'span',
+                { onClick: this.controller.deselectAllItems, disabled: !confirmable, className: 'bf-deselect-all' },
+                _react2.default.createElement('i', { className: 'braft-icon-close' }),
+                ' ',
+                language.deselect
+              ),
+              _react2.default.createElement(
+                'span',
+                { onClick: this.removeSelectedItems, disabled: !confirmable, className: 'bf-remove-selected' },
+                _react2.default.createElement('i', { className: 'braft-icon-bin' }),
+                ' ',
+                language.removeSelected
+              )
+            ),
+            this.buildMediaList()
+          ) : null,
+          showExternalForm && allowExternal ? _react2.default.createElement(
+            'div',
+            { className: 'bf-add-external' },
+            _react2.default.createElement(
+              'div',
+              { className: 'bf-external-form' },
+              _react2.default.createElement(
+                'div',
+                { className: 'bf-external-input' },
+                _react2.default.createElement(
+                  'div',
+                  null,
+                  _react2.default.createElement('input', { onKeyDown: this.confirmAddExternal, value: external.url, onChange: this.inputExternal, placeholder: language.externalInputPlaceHolder })
+                ),
+                _react2.default.createElement(
+                  'button',
+                  { type: 'button', onClick: this.confirmAddExternal, disabled: !external.url.trim().length },
+                  language.confirm
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { 'data-type': external.type, className: 'bf-switch-external-type' },
+                externals.image ? _react2.default.createElement(
+                  'button',
+                  { type: 'button', onClick: this.switchExternalType, 'data-type': 'IMAGE' },
+                  language.image
+                ) : null,
+                externals.audio ? _react2.default.createElement(
+                  'button',
+                  { type: 'button', onClick: this.switchExternalType, 'data-type': 'AUDIO' },
+                  language.audio
+                ) : null,
+                externals.video ? _react2.default.createElement(
+                  'button',
+                  { type: 'button', onClick: this.switchExternalType, 'data-type': 'VIDEO' },
+                  language.video
+                ) : null,
+                externals.embed ? _react2.default.createElement(
+                  'button',
+                  { type: 'button', onClick: this.switchExternalType, 'data-type': 'EMBED' },
+                  language.embed
+                ) : null
+              ),
+              _react2.default.createElement(
+                'span',
+                { className: 'bf-external-tip' },
+                language.externalInputTip
+              )
+            )
+          ) : null
+        ),
+        _react2.default.createElement(
+          'footer',
+          { className: 'bf-manager-footer' },
+          _react2.default.createElement(
+            'div',
+            { className: 'pull-left' },
+            allowExternal ? _react2.default.createElement(
+              'span',
+              {
+                onClick: this.toggleExternalForm,
+                className: 'bf-toggle-external-form'
+              },
+              showExternalForm ? _react2.default.createElement(
+                'span',
+                { className: 'bf-bottom-text' },
+                _react2.default.createElement('i', { className: 'braft-icon-add' }),
+                ' ',
+                language.addLocalFile
+              ) : _react2.default.createElement(
+                'span',
+                { className: 'bf-bottom-text' },
+                _react2.default.createElement('i', { className: 'braft-icon-add' }),
+                ' ',
+                language.addExternalSource
+              )
+            ) : null
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'pull-right' },
+            _react2.default.createElement(
+              'button',
+              { onClick: this.confirmInsert, className: 'button button-insert', disabled: !confirmable },
+              language.insert
+            ),
+            _react2.default.createElement(
+              'button',
+              { onClick: this.cancelInsert, className: 'button button-cancel' },
+              language.cancel
+            )
+          )
+        )
+      );
+    }
+  }, {
+    key: 'buildMediaList',
+    value: function buildMediaList() {
+      var _this2 = this;
+
+      return _react2.default.createElement(
+        'ul',
+        { className: 'bf-list' },
+        _react2.default.createElement(
+          'li',
+          { className: 'bf-add-item' },
+          _react2.default.createElement('i', { className: 'braft-icon-add' }),
+          _react2.default.createElement('input', { accept: this.fileAccept, onChange: this.reslovePickedFiles, multiple: true, type: 'file' })
+        ),
+        this.state.items.map(function (item, index) {
+
+          var previewerComponents = null;
+          var progressMarker = item.uploading && !_this2.props.hideProgress ? _react2.default.createElement(
+            'div',
+            { className: 'bf-item-uploading' },
+            _react2.default.createElement('div', { className: 'bf-item-uploading-bar', style: { width: item.uploadProgress / 1 + '%' } })
+          ) : '';
+
+          switch (item.type) {
+            case 'IMAGE':
+              previewerComponents = _react2.default.createElement(
+                'div',
+                { className: 'bf-image' },
+                progressMarker,
+                _react2.default.createElement('img', { src: item.thumbnail || item.url })
+              );
+              break;
+            case 'VIDEO':
+              previewerComponents = _react2.default.createElement(
+                'div',
+                { className: 'bf-icon bf-video', title: item.url },
+                progressMarker,
+                _react2.default.createElement('i', { className: 'braft-icon-film' }),
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  item.name || item.url
+                )
+              );
+              break;
+            case 'AUDIO':
+              previewerComponents = _react2.default.createElement(
+                'div',
+                { className: 'bf-icon bf-audio', title: item.url },
+                progressMarker,
+                _react2.default.createElement('i', { className: 'braft-icon-music' }),
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  item.name || item.url
+                )
+              );
+              break;
+            case 'EMBED':
+              previewerComponents = _react2.default.createElement(
+                'div',
+                { className: 'bf-icon bf-embed', title: item.url },
+                progressMarker,
+                _react2.default.createElement('i', { className: 'braft-icon-code' }),
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  item.name || _this2.props.language.embed
+                )
+              );
+              break;
+            default:
+              previewerComponents = _react2.default.createElement(
+                'a',
+                { className: 'bf-icon bf-file', title: item.url, href: item.url },
+                progressMarker,
+                _react2.default.createElement('i', { className: 'braft-icon-file-text' }),
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  item.name || item.url
+                )
+              );
+              break;
+          }
+
+          var className = ['bf-item'];
+          item.selected && className.push('active');
+          item.uploading && className.push('uploading');
+          item.error && className.push('error');
+
+          return _react2.default.createElement(
+            'li',
+            {
+              key: index,
+              title: item.name,
+              'data-id': item.id,
+              className: className.join(' '),
+              onClick: _this2.toggleSelectItem
+            },
+            previewerComponents,
+            _react2.default.createElement('span', { 'data-id': item.id, onClick: _this2.removeItem, className: 'bf-item-remove braft-icon-close' }),
+            _react2.default.createElement(
+              'span',
+              { className: 'bf-item-title' },
+              item.name
+            )
+          );
+        })
+      );
+    }
+  }]);
+
+  return BraftFinderView;
+}(_react2.default.Component);
+
+BraftFinderView.defaultProps = {
+  accepts: {
+    image: true,
+    video: true,
+    audio: true,
+    embed: true
+  },
+  externals: {
+    image: true,
+    video: true,
+    audio: true,
+    embed: true
+  }
+};
+exports.default = BraftFinderView;
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _base = __webpack_require__(0);
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var defaultValidator = function defaultValidator() {
+  return true;
+};
+
+var BraftFinderController = function BraftFinderController() {
+  var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  _classCallCheck(this, BraftFinderController);
+
+  _initialiseProps.call(this);
+
+  this.items = props.items || [];
+  this.uploadFn = props.uploader;
+  this.validateFn = props.validator || defaultValidator;
+
+  this.changeListeners = [];
+}
+
+// resolvePastedFiles ({ clipboardData }, callback) {
+
+//   if (clipboardData && clipboardData.items && clipboardData.items[0].type.indexOf('image') > -1) {
+//     this.uploadImage(clipboardData.items[0].getAsFile(), callback)
+//   }
+
+// }
+
+;
+
+var _initialiseProps = function _initialiseProps() {
+  var _this = this;
+
+  this.setProps = function () {
+    var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+
+    _this.items = props.items || _this.items || [];
+    _this.uploadFn = props.uploader;
+    _this.validateFn = props.validator || defaultValidator;
+  };
+
+  this.getMediaItem = function (id) {
+    return _this.items.find(function (item) {
+      return item.id === id;
+    });
+  };
+
+  this.getSelectedItems = function () {
+    return _this.items.filter(function (item) {
+      return item.selected;
+    });
+  };
+
+  this.getItems = function () {
+    return _this.items;
+  };
+
+  this.setItems = function (items) {
+    _this.items = items.map(function (item) {
+      return _extends({}, item, { id: item.id.toString() });
+    }) || [];
+    _this.applyChange();
+    _this.uploadItems();
+  };
+
+  this.addMediaItem = function (item) {
+    _this.addItems([item]);
+  };
+
+  this.addItems = function (items) {
+    _this.items = [].concat(_toConsumableArray(_this.items), _toConsumableArray(items.map(function (item) {
+      return _extends({}, item, { id: item.id.toString() });
+    })));
+    _this.applyChange();
+    _this.uploadItems();
+  };
+
+  this.selectMediaItem = function (id) {
+    var item = _this.getMediaItem(id);
+    if (item && (item.uploading || item.error)) {
+      return false;
+    }
+    _this.setMediaItemState(id, {
+      selected: true
+    });
+  };
+
+  this.selectAllItems = function () {
+    _this.items = _this.items.filter(function (item) {
+      return !item.error && !item.uploading;
+    }).map(function (item) {
+      return _extends({}, item, { selected: true });
+    });
+    _this.applyChange();
+  };
+
+  this.deselectMediaItem = function (id) {
+    _this.setMediaItemState(id, {
+      selected: false
+    });
+  };
+
+  this.deselectAllItems = function () {
+    _this.items = _this.items.map(function (item) {
+      return _extends({}, item, { selected: false });
+    });
+    _this.applyChange();
+  };
+
+  this.removeMediaItem = function (id) {
+    _this.items = _this.items.filter(function (item) {
+      return item.id !== id;
+    });
+    _this.applyChange();
+  };
+
+  this.removeItems = function () {
+    var ids = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+
+    _this.items = _this.items.filter(function (item) {
+      return !ids.includes(item.id);
+    });
+    _this.applyChange();
+  };
+
+  this.removeSelectedItems = function () {
+    _this.items = _this.items.filter(function (item) {
+      return !item.selected;
+    });
+    _this.applyChange();
+  };
+
+  this.removeErrorItems = function () {
+    _this.items = _this.items.filter(function (item) {
+      return !item.error;
+    });
+    _this.applyChange();
+  };
+
+  this.removeAllItems = function () {
+    _this.items = [];
+    _this.applyChange();
+  };
+
+  this.setMediaItemState = function (id, state) {
+    _this.items = _this.items.map(function (item) {
+      return item.id === id ? _extends({}, item, state) : item;
+    });
+    _this.applyChange();
+  };
+
+  this.reuploadErrorItems = function () {
+    _this.uploadItems(true);
+  };
+
+  this.uploadItems = function () {
+    var ignoreError = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
+
+    _this.items.forEach(function (item, index) {
+
+      if (item.uploading || item.url) {
+        return false;
+      }
+
+      if (!ignoreError && item.error) {
+        return false;
+      }
+
+      if (item.type === 'IMAGE') {
+        _this.createThumbnail(item);
+        _this.uploadFn = _this.uploadFn || _this.createInlineImage;
+      } else if (!_this.uploadFn) {
+        _this.setMediaItemState(item.id, { error: 1 });
+        return false;
+      }
+
+      _this.setMediaItemState(item.id, {
+        uploading: true,
+        uploadProgress: 0,
+        error: 0
+      });
+
+      _this.uploadFn({
+        id: item.id,
+        file: item.file,
+        success: function success(res) {
+          _this.handleUploadSuccess(item.id, res);
+        },
+        progress: function progress(_progress) {
+          _this.setMediaItemState(item.id, {
+            uploading: true,
+            uploadProgress: _progress
+          });
+        },
+        error: function error(_error) {
+          _this.setMediaItemState(item.id, {
+            uploading: false,
+            error: 2
+          });
+        }
+      });
+    });
+  };
+
+  this.createThumbnail = function (_ref) {
+    var id = _ref.id,
+        file = _ref.file;
+
+
+    _this.compressImage({
+      url: URL.createObjectURL(file),
+      width: 226,
+      height: 226,
+      success: function success(result) {
+        _this.setMediaItemState(id, { thumbnail: result.url });
+      }
+    });
+  };
+
+  this.createInlineImage = function (param) {
+
+    _this.compressImage({
+      url: URL.createObjectURL(param.file),
+      width: 1280,
+      height: 800,
+      success: function success(result) {
+        param.success({ url: result.url });
+      },
+      error: function error(_error2) {
+        param.error(_error2);
+      }
+    });
+  };
+
+  this.handleUploadSuccess = function (id, data) {
+
+    _this.setMediaItemState(id, _extends({}, data, {
+      file: null,
+      uploadProgress: 1,
+      uploading: false,
+      selected: false
+    }));
+
+    var item = _this.getMediaItem(data.id || id);
+    item.onReady && item.onReady(item);
+  };
+
+  this.compressImage = function (param) {
+
+    var image = new Image();
+    var compressCanvas = document.createElement('canvas');
+
+    image.src = param.url;
+    image.onload = function () {
+
+      var scale = 1;
+
+      if (this.width > param.width || this.height > param.height) {
+        scale = this.width > this.height ? param.width / this.width : param.height / this.height;
+      } else {
+        param.success({
+          url: param.url,
+          width: this.width,
+          height: this.height
+        });
+        return false;
+      }
+
+      compressCanvas.width = this.width * scale;
+      compressCanvas.height = this.height * scale;
+
+      var ctx = compressCanvas.getContext('2d');
+      ctx.drawImage(this, 0, 0, compressCanvas.width, compressCanvas.height);
+
+      param.success({
+        url: compressCanvas.toDataURL('image/png', 1),
+        width: compressCanvas.width,
+        height: compressCanvas.height
+      });
+    };
+
+    image.onerror = function (error) {
+      param.error && param.error(error);
+    };
+  };
+
+  this.applyChange = function () {
+    _this.changeListeners.forEach(function (_ref2) {
+      var callback = _ref2.callback;
+      return callback(_this.items);
+    });
+  };
+
+  this.uploadImage = function (file, callback) {
+
+    var fileId = new Date().getTime() + '_' + (0, _base.UniqueIndex)();
+
+    _this.addMediaItem({
+      type: 'IMAGE',
+      id: fileId,
+      file: file,
+      name: fileId,
+      size: file.size,
+      uploadProgress: 0,
+      uploading: false,
+      selected: false,
+      error: 0,
+      onReady: callback
+    });
+  };
+
+  this.uploadImageRecursively = function (files, callback) {
+    var index = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+
+
+    if (files[index] && files[index].type.indexOf('image') > -1) {
+      _this.uploadImage(files[index], function (image) {
+        callback && callback(image);
+        index < files.length - 1 && _this.uploadImageRecursively(files, callback, index + 1);
+      });
+    } else {
+      index < files.length - 1 && _this.uploadImageRecursively(files, callback, index + 1);
+    }
+  };
+
+  this.resolveFiles = function (param, index, accepts) {
+
+    if (index < param.files.length) {
+
+      if (_this.validateFn(param.files[index])) {
+
+        var data = {
+          id: new Date().getTime() + '_' + (0, _base.UniqueIndex)(),
+          file: param.files[index],
+          name: param.files[index].name,
+          size: param.files[index].size,
+          uploadProgress: 0,
+          uploading: false,
+          selected: false,
+          error: 0,
+          onReady: function onReady(item) {
+            param.onItemReady && param.onItemReady(item);
+          }
+        };
+
+        if (param.files[index].type.indexOf('image/') === 0 && accepts.image) {
+          data.type = 'IMAGE';
+          _this.addMediaItem(data);
+        } else if (param.files[index].type.indexOf('video/') === 0 && accepts.video) {
+          data.type = 'VIDEO';
+          _this.addMediaItem(data);
+        } else if (param.files[index].type.indexOf('audio/') === 0 && accepts.audio) {
+          data.type = 'AUDIO';
+          _this.addMediaItem(data);
+        }
+      }
+
+      setTimeout(function () {
+        _this.resolveFiles(param, index + 1, accepts);
+      }, 60);
+    } else {
+      param.onAllReady && param.onAllReady();
+    }
+  };
+
+  this.onChange = function (callback) {
+
+    var listenerId = (0, _base.UniqueIndex)();
+
+    _this.changeListeners.push({
+      id: listenerId,
+      callback: callback
+    });
+
+    return listenerId;
+  };
+
+  this.offChange = function (listenerId) {
+    _this.changeListeners = _this.changeListeners.filter(function (_ref3) {
+      var id = _ref3.id;
+      return id !== listenerId;
+    });
+  };
+};
+
+exports.default = BraftFinderController;
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _controller = __webpack_require__(7);
+
+var _controller2 = _interopRequireDefault(_controller);
+
+var _view = __webpack_require__(6);
+
+var _view2 = _interopRequireDefault(_view);
+
+var _languages = __webpack_require__(5);
+
+var _languages2 = _interopRequireDefault(_languages);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function (superProps) {
+
+  var BraftFinder = new _controller2.default(superProps);
+
+  BraftFinder.ReactComponent = function () {
+    var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+
+    var componentProps = _extends({}, superProps, props);
+
+    var language = componentProps.language ? _languages2.default[componentProps.language] || _languages2.default['zh'] : _languages2.default['zh'];
+
+    return _react2.default.createElement(_view2.default, _extends({}, componentProps, {
+      language: language,
+      controller: BraftFinder
+    }));
+  };
+
+  return BraftFinder;
+};
+
+/***/ }),
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ })
+/******/ ]);
+});

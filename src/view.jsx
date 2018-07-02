@@ -161,7 +161,7 @@ export default class BraftFinderView extends React.Component {
           </div>
           <div className="pull-right">
             <button onClick={this.confirmInsert} className="button button-insert" disabled={!confirmable}>{language.insert}</button>
-            <button onClick={this.cancel} className="button button-cancel">{language.cancel}</button>
+            <button onClick={this.cancelInsert} className="button button-cancel">{language.cancel}</button>
           </div>
         </footer>
       </div>

@@ -1,6 +1,7 @@
 /example
 /src
 /node_modules
+/build
 .babelrc
 .gitignore
 webpack.config.base.js

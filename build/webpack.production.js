@@ -25,7 +25,7 @@ module.exports = merge(baseConfigs, {
     'draftjs-utils': 'draftjs-utils'
   },
   optimization: {
-    minimize: true
+    minimize: false
   },
   plugins: [
     new ExtractTextPlugin("index.css"),
