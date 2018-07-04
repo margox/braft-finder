@@ -3,14 +3,17 @@ import FinderController from 'controller.js'
 import FinderView from 'view'
 import languages from 'languages'
 
-export default (superProps) => {
+export default class BraftFinder extends FinderController {
 
-  const BraftFinder = new FinderController(superProps)
+  constructor (props) {
+    super(props)
+    this.superProps = props
+  }
 
-  BraftFinder.ReactComponent = (props = {}) => {
+  ReactComponent = (props = {}) => {
 
     const componentProps = {
-      ...superProps,
+      ...this.superProps,
       ...props
     }
 
@@ -20,12 +23,11 @@ export default (superProps) => {
       <FinderView
         {...componentProps}
         language={language}
-        controller={BraftFinder}
+        controller={this}
       />
     )
 
   }
 
-  return BraftFinder
 
 }

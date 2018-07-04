@@ -7,12 +7,16 @@ class Demo extends React.Component {
   constructor (props) {
 
     super(props)
-    this.braftFinder = BraftFinder()
+    this.braftFinder = new BraftFinder()
 
   }
 
   beforeRemove = (items) => {
     return confirm('确认删除这些项目?')
+  }
+
+  handelFileSelect = (files) => {
+    return [].slice.call(files, 0, 3)
   }
 
   render() {
@@ -30,6 +34,7 @@ class Demo extends React.Component {
           onBeforeInsert={items => console.log('will insert:', items)}
           onRemove={items => console.log('removed', items)}
           onBeforeRemove={this.beforeRemove}
+          onFileSelect={this.handelFileSelect}
         />
       </div>
     )

@@ -336,8 +336,19 @@ export default class BraftFinderView extends React.Component {
 
     event.persist()
 
+    let files = event.target.files
+
+    if (this.props.onFileSelect) {
+      const result = this.props.onFileSelect(files)
+      if (result === false) {
+        return false
+      } else if (result instanceof FileList || result instanceof Array) {
+        files = result
+      }
+    }
+
     this.controller.resolveFiles({
-      files: event.target.files,
+      files: files,
       onItemReady: ({ id }) => this.controller.selectMediaItem(id),
       onAllReady: () => event.target.value = null
     }, 0, this.props.accepts)

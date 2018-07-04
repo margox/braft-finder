@@ -375,8 +375,19 @@ var BraftFinderView = function (_React$Component) {
 
       event.persist();
 
+      var files = event.target.files;
+
+      if (_this.props.onFileSelect) {
+        var result = _this.props.onFileSelect(files);
+        if (result === false) {
+          return false;
+        } else if (result instanceof FileList || result instanceof Array) {
+          files = result;
+        }
+      }
+
       _this.controller.resolveFiles({
-        files: event.target.files,
+        files: files,
         onItemReady: function onItemReady(_ref) {
           var id = _ref.id;
           return _this.controller.selectMediaItem(id);
@@ -1254,26 +1265,48 @@ var _languages2 = _interopRequireDefault(_languages);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = function (superProps) {
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-  var BraftFinder = new _controller2.default(superProps);
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-  BraftFinder.ReactComponent = function () {
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var BraftFinder = function (_FinderController) {
+  _inherits(BraftFinder, _FinderController);
+
+  function BraftFinder(props) {
+    _classCallCheck(this, BraftFinder);
+
+    var _this = _possibleConstructorReturn(this, (BraftFinder.__proto__ || Object.getPrototypeOf(BraftFinder)).call(this, props));
+
+    _initialiseProps.call(_this);
+
+    _this.superProps = props;
+    return _this;
+  }
+
+  return BraftFinder;
+}(_controller2.default);
+
+var _initialiseProps = function _initialiseProps() {
+  var _this2 = this;
+
+  this.ReactComponent = function () {
     var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
 
-    var componentProps = _extends({}, superProps, props);
+    var componentProps = _extends({}, _this2.superProps, props);
 
     var language = componentProps.language ? _languages2.default[componentProps.language] || _languages2.default['zh'] : _languages2.default['zh'];
 
     return _react2.default.createElement(_view2.default, _extends({}, componentProps, {
       language: language,
-      controller: BraftFinder
+      controller: _this2
     }));
   };
-
-  return BraftFinder;
 };
+
+exports.default = BraftFinder;
 
 /***/ }),
 /* 9 */,
