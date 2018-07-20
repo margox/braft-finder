@@ -1,6 +1,6 @@
 {
   "name": "braft-finder",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Media manager for Braft Editor.",
   "main": "./dist/index.js",
   "directories": {
@@ -27,7 +27,6 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.28.11",
-    "extract-text-webpack-plugin": "next",
     "html-webpack-plugin": "next",
     "node-sass": "^4.9.0",
     "optimize-css-assets-webpack-plugin": "^4.0.2",

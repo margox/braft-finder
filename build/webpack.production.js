@@ -1,6 +1,5 @@
 var webpack = require('webpack')
   , merge = require('webpack-merge')
-  , ExtractTextPlugin = require('extract-text-webpack-plugin')
   , OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
   , path = require('path')
   , baseConfigs = require('./webpack.base')
@@ -28,7 +27,6 @@ module.exports = merge(baseConfigs, {
     minimize: false
   },
   plugins: [
-    new ExtractTextPlugin("index.css"),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development')
