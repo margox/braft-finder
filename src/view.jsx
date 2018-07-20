@@ -31,22 +31,23 @@ export default class BraftFinderView extends React.Component {
 
     this.dragCounter = 0
     this.controller = this.props.controller
+    const initialItems = this.controller.getItems()
 
     this.state = {
       draging: false,
       error: false,
-      confirmable: false,
+      confirmable: initialItems.find(({ selected }) => selected),
       external: {
         url: '',
         type: 'IMAGE'
       },
       showExternalForm: false,
       allowExternal: false,
-      items: this.controller.getItems()
+      items: initialItems
     }
 
     this.changeListenerId = this.controller.onChange(items => {
-      this.setState({ items, confirmable: items.filter(({ selected }) => selected).length })
+      this.setState({ items, confirmable: items.find(({ selected }) => selected) })
       this.props.onChange && this.props.onChange(items)
     })
 
@@ -119,7 +120,7 @@ export default class BraftFinderView extends React.Component {
                 <span onClick={this.controller.deselectAllItems} disabled={!confirmable} className="bf-deselect-all"><i className="braft-icon-close"></i> {language.deselect}</span>
                 <span onClick={this.removeSelectedItems} disabled={!confirmable} className="bf-remove-selected"><i className="braft-icon-bin"></i> {language.removeSelected}</span>
               </div>
-              {this.buildMediaList()}
+              {this.buildItemList()}
             </div>
           ) : null}
           {showExternalForm && allowExternal ? (
@@ -167,7 +168,7 @@ export default class BraftFinderView extends React.Component {
 
   }
 
-  buildMediaList () {
+  buildItemList () {
 
     return (
       <ul className="bf-list">
@@ -417,12 +418,15 @@ export default class BraftFinderView extends React.Component {
       const filteredItems = this.props.onBeforeInsert(selectedItems)
 
       if (filteredItems && (filteredItems instanceof Array)) {
+        this.controller.deselectAllItems()
         this.props.onInsert && this.props.onInsert(filteredItems)
       } else if (filteredItems !== false) {
+        this.controller.deselectAllItems()
         this.props.onInsert && this.props.onInsert(selectedItems)
       }
 
     } else {
+      this.controller.deselectAllItems()
       this.props.onInsert && this.props.onInsert(selectedItems)
     }
 

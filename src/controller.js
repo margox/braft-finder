@@ -216,13 +216,6 @@ export default class BraftFinderController {
 
       if (this.width > param.width || this.height > param.height) {
         scale = this.width > this.height ? param.width / this.width : param.height / this.height
-      } else {
-        param.success({
-          url: param.url,
-          width: this.width,
-          height: this.height
-        })
-        return false
       }
 
       compressCanvas.width = this.width * scale

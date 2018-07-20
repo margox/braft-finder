@@ -1092,36 +1092,43 @@ var BraftFinderView = function (_React$Component) {
         var filteredItems = _this.props.onBeforeInsert(selectedItems);
 
         if (filteredItems && filteredItems instanceof Array) {
+          _this.controller.deselectAllItems();
           _this.props.onInsert && _this.props.onInsert(filteredItems);
         } else if (filteredItems !== false) {
+          _this.controller.deselectAllItems();
           _this.props.onInsert && _this.props.onInsert(selectedItems);
         }
       } else {
+        _this.controller.deselectAllItems();
         _this.props.onInsert && _this.props.onInsert(selectedItems);
       }
     };
 
     _this.dragCounter = 0;
     _this.controller = _this.props.controller;
+    var initialItems = _this.controller.getItems();
 
     _this.state = {
       draging: false,
       error: false,
-      confirmable: false,
+      confirmable: initialItems.find(function (_ref2) {
+        var selected = _ref2.selected;
+        return selected;
+      }),
       external: {
         url: '',
         type: 'IMAGE'
       },
       showExternalForm: false,
       allowExternal: false,
-      items: _this.controller.getItems()
+      items: initialItems
     };
 
     _this.changeListenerId = _this.controller.onChange(function (items) {
-      _this.setState({ items: items, confirmable: items.filter(function (_ref2) {
-          var selected = _ref2.selected;
+      _this.setState({ items: items, confirmable: items.find(function (_ref3) {
+          var selected = _ref3.selected;
           return selected;
-        }).length });
+        }) });
       _this.props.onChange && _this.props.onChange(items);
     });
 
@@ -1228,7 +1235,7 @@ var BraftFinderView = function (_React$Component) {
                 language.removeSelected
               )
             ),
-            this.buildMediaList()
+            this.buildItemList()
           ) : null,
           showExternalForm && allowExternal ? _react2.default.createElement(
             'div',
@@ -1327,8 +1334,8 @@ var BraftFinderView = function (_React$Component) {
       );
     }
   }, {
-    key: 'buildMediaList',
-    value: function buildMediaList() {
+    key: 'buildItemList',
+    value: function buildItemList() {
       var _this2 = this;
 
       return _react2.default.createElement(
@@ -1736,13 +1743,6 @@ var _initialiseProps = function _initialiseProps() {
 
       if (this.width > param.width || this.height > param.height) {
         scale = this.width > this.height ? param.width / this.width : param.height / this.height;
-      } else {
-        param.success({
-          url: param.url,
-          width: this.width,
-          height: this.height
-        });
-        return false;
       }
 
       compressCanvas.width = this.width * scale;
