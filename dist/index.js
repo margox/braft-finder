@@ -1101,6 +1101,9 @@ var BraftFinderView = function (_React$Component) {
       }
     };
 
+    _this.dragCounter = 0;
+    _this.controller = _this.props.controller;
+
     _this.state = {
       draging: false,
       error: false,
@@ -1111,11 +1114,8 @@ var BraftFinderView = function (_React$Component) {
       },
       showExternalForm: false,
       allowExternal: false,
-      items: []
+      items: _this.controller.getItems()
     };
-
-    _this.dragCounter = 0;
-    _this.controller = _this.props.controller;
 
     _this.changeListenerId = _this.controller.onChange(function (items) {
       _this.setState({ items: items, confirmable: items.filter(function (_ref2) {
@@ -1151,7 +1151,6 @@ var BraftFinderView = function (_React$Component) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-
       this.setState(this.mapPropsToState(this.props));
     }
   }, {

@@ -29,6 +29,9 @@ export default class BraftFinderView extends React.Component {
 
     super(props)
 
+    this.dragCounter = 0
+    this.controller = this.props.controller
+
     this.state = {
       draging: false,
       error: false,
@@ -39,11 +42,8 @@ export default class BraftFinderView extends React.Component {
       },
       showExternalForm: false,
       allowExternal: false,
-      items: []
+      items: this.controller.getItems()
     }
-
-    this.dragCounter = 0
-    this.controller = this.props.controller
 
     this.changeListenerId = this.controller.onChange(items => {
       this.setState({ items, confirmable: items.filter(({ selected }) => selected).length })
@@ -82,9 +82,7 @@ export default class BraftFinderView extends React.Component {
   }
 
   componentDidMount () {
-
     this.setState(this.mapPropsToState(this.props))
-
   }
 
   componentWillReceiveProps (nextProps) {
