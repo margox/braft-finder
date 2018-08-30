@@ -2,6 +2,7 @@ import React from 'react'
 import FinderController from 'controller.js'
 import FinderView from 'view'
 import languages from 'languages'
+import * as ImageUtils from 'utils/image'
 
 export default class BraftFinder extends FinderController {
 
@@ -29,5 +30,6 @@ export default class BraftFinder extends FinderController {
 
   }
 
-
 }
+
+export { ImageUtils }

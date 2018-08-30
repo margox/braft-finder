@@ -1,4 +1,5 @@
 import { UniqueIndex } from 'utils/base'
+import { compressImage } from 'utils/image'
 
 const defaultValidator = () => true
 
@@ -162,29 +163,18 @@ export default class BraftFinderController {
 
   createThumbnail = ({ id, file }) => {
 
-    this.compressImage({
-      url: URL.createObjectURL(file),
-      width: 226,
-      height: 226,
-      success: (result) => {
-        this.setMediaItemState(id, { thumbnail: result.url })
-      }
+    compressImage(URL.createObjectURL(file), 226, 226).then((result) => {
+      this.setMediaItemState(id, { thumbnail: result.url })
     })
 
   }
 
   createInlineImage = (param) => {
 
-    this.compressImage({
-      url: URL.createObjectURL(param.file),
-      width: 1280,
-      height: 800,
-      success: (result) => {
-        param.success({ url: result.url })
-      },
-      error: (error) => {
-        param.error(error)
-      }
+    compressImage(URL.createObjectURL(param.file), 1280, 800).then((result) => {
+      param.success({ url: result.url })
+    }).catch((error) => {
+      param.error(error)
     })
 
   }
@@ -201,40 +191,6 @@ export default class BraftFinderController {
 
     const item = this.getMediaItem(data.id || id)
     item.onReady && item.onReady(item)
-
-  }
-
-  compressImage = (param) => {
-
-    const image = new Image()
-    const compressCanvas = document.createElement('canvas')
-
-    image.src = param.url
-    image.onload = function () {
-
-      let scale = 1  
-
-      if (this.width > param.width || this.height > param.height) {
-        scale = this.width > this.height ? param.width / this.width : param.height / this.height
-      }
-
-      compressCanvas.width = this.width * scale
-      compressCanvas.height = this.height * scale
-
-      let ctx = compressCanvas.getContext('2d')
-      ctx.drawImage(this, 0, 0, compressCanvas.width, compressCanvas.height)
-
-      param.success({
-        url: compressCanvas.toDataURL('image/png', 1),
-        width: compressCanvas.width,
-        height: compressCanvas.height
-      })
-
-    }
-
-    image.onerror = function (error) {
-      param.error && param.error(error)
-    }
 
   }
 
@@ -274,42 +230,52 @@ export default class BraftFinderController {
 
   }
 
+  addResolvedFiles = (param, index, accepts) => {
+
+    let data = {
+      id: new Date().getTime() + '_' + UniqueIndex(),
+      file: param.files[index],
+      name: param.files[index].name,
+      size: param.files[index].size,
+      uploadProgress: 0,
+      uploading: false,
+      selected: false,
+      error: 0,
+      onReady: (item) => {
+        param.onItemReady && param.onItemReady(item)
+      }
+    }
+
+    if (param.files[index].type.indexOf('image/') === 0 && accepts.image) {
+      data.type = 'IMAGE'
+      this.addMediaItem(data)
+    } else if (param.files[index].type.indexOf('video/') === 0 && accepts.video) {
+      data.type = 'VIDEO'
+      this.addMediaItem(data)
+    } else if (param.files[index].type.indexOf('audio/') === 0 && accepts.audio) {
+      data.type = 'AUDIO'
+      this.addMediaItem(data)
+    }
+
+    setTimeout(() => {
+      this.resolveFiles(param, index + 1, accepts)
+    }, 60)
+
+  }
+
   resolveFiles = (param, index, accepts) => {
 
     if (index < param.files.length) {
 
-      if (this.validateFn(param.files[index])) {
+      const validateResult = this.validateFn(param.files[index])
 
-        let data = {
-          id: new Date().getTime() + '_' + UniqueIndex(),
-          file: param.files[index],
-          name: param.files[index].name,
-          size: param.files[index].size,
-          uploadProgress: 0,
-          uploading: false,
-          selected: false,
-          error: 0,
-          onReady: (item) => {
-            param.onItemReady && param.onItemReady(item)
-          }
-        }
-
-        if (param.files[index].type.indexOf('image/') === 0 && accepts.image) {
-          data.type = 'IMAGE'
-          this.addMediaItem(data)
-        } else if (param.files[index].type.indexOf('video/') === 0 && accepts.video) {
-          data.type = 'VIDEO'
-          this.addMediaItem(data)
-        } else if (param.files[index].type.indexOf('audio/') === 0 && accepts.audio) {
-          data.type = 'AUDIO'
-          this.addMediaItem(data)
-        }
-
+      if (validateResult instanceof Promise) {
+        validateResult.then(() => {
+          this.addResolvedFiles(param, index, accepts)
+        })
+      } else if (validateResult) {
+        this.addResolvedFiles(param, index, accepts)
       }
-
-      setTimeout(() => {
-        this.resolveFiles(param, index + 1, accepts)
-      }, 60)
 
     } else {
       param.onAllReady && param.onAllReady()
