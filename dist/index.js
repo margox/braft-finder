@@ -1034,6 +1034,26 @@ var BraftFinderView = function (_React$Component) {
       event.stopPropagation();
     };
 
+    _this.selectAllItems = function () {
+
+      var allItems = _this.controller.getItems();
+
+      if (!_this.props.onBeforeSelect || _this.props.onBeforeSelect(allItems, allItems) !== false) {
+        _this.controller.selectAllItems();
+        _this.props.onSelect && _this.props.onSelect(allItems, allItems);
+      }
+    };
+
+    _this.deselectAllItems = function () {
+
+      var allItems = _this.controller.getItems();
+
+      if (!_this.props.onBeforeDeselect || _this.props.onBeforeDeselect(allItems, allItems) !== false) {
+        _this.controller.deselectAllItems();
+        _this.props.onDeselect && _this.props.onDeselect(allItems, allItems);
+      }
+    };
+
     _this.removeSelectedItems = function () {
 
       var selectedItems = _this.controller.getSelectedItems();
@@ -1275,14 +1295,14 @@ var BraftFinderView = function (_React$Component) {
               { className: 'bf-list-tools' },
               _react2.default.createElement(
                 'span',
-                { onClick: this.controller.selectAllItems, className: 'bf-select-all' },
+                { onClick: this.selectAllItems, className: 'bf-select-all' },
                 _react2.default.createElement('i', { className: 'braft-icon-done' }),
                 ' ',
                 language.selectAll
               ),
               _react2.default.createElement(
                 'span',
-                { onClick: this.controller.deselectAllItems, disabled: !confirmable, className: 'bf-deselect-all' },
+                { onClick: this.deselectAllItems, disabled: !confirmable, className: 'bf-deselect-all' },
                 _react2.default.createElement('i', { className: 'braft-icon-close' }),
                 ' ',
                 language.deselect

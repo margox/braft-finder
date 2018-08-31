@@ -116,8 +116,8 @@ export default class BraftFinderView extends React.Component {
           {items.length ? (
             <div className="bf-list-wrap">
               <div className="bf-list-tools">
-                <span onClick={this.controller.selectAllItems} className="bf-select-all"><i className="braft-icon-done"></i> {language.selectAll}</span>
-                <span onClick={this.controller.deselectAllItems} disabled={!confirmable} className="bf-deselect-all"><i className="braft-icon-close"></i> {language.deselect}</span>
+                <span onClick={this.selectAllItems} className="bf-select-all"><i className="braft-icon-done"></i> {language.selectAll}</span>
+                <span onClick={this.deselectAllItems} disabled={!confirmable} className="bf-deselect-all"><i className="braft-icon-close"></i> {language.deselect}</span>
                 <span onClick={this.removeSelectedItems} disabled={!confirmable} className="bf-remove-selected"><i className="braft-icon-bin"></i> {language.removeSelected}</span>
               </div>
               {this.buildItemList()}
@@ -299,6 +299,28 @@ export default class BraftFinderView extends React.Component {
     }
 
     event.stopPropagation()
+
+  }
+
+  selectAllItems = () => {
+
+    const allItems = this.controller.getItems()
+
+    if (!this.props.onBeforeSelect || this.props.onBeforeSelect(allItems, allItems) !== false) {
+      this.controller.selectAllItems()
+      this.props.onSelect && this.props.onSelect(allItems, allItems)
+    }
+
+  }
+
+  deselectAllItems = () => {
+
+    const allItems = this.controller.getItems()
+
+    if (!this.props.onBeforeDeselect || this.props.onBeforeDeselect(allItems, allItems) !== false) {
+      this.controller.deselectAllItems()
+      this.props.onDeselect && this.props.onDeselect(allItems, allItems)
+    }
 
   }
 
