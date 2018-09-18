@@ -3,9 +3,9 @@ import React from 'react'
 import { UniqueIndex } from 'utils/base'
 
 const defaultAccepts = {
-  'image': 'image/png,image/jpeg,image/gif,image/webp,image/apng,image/svg',
-  'video': 'video/mp4',
-  'audio': 'audio/mp3'
+  image: 'image/png,image/jpeg,image/gif,image/webp,image/apng,image/svg',
+  video: 'video/mp4',
+  audio: 'audio/mp3'
 }
 
 export default class BraftFinderView extends React.Component {
@@ -41,6 +41,7 @@ export default class BraftFinderView extends React.Component {
         url: '',
         type: 'IMAGE'
       },
+      fileAccept: '',
       showExternalForm: false,
       allowExternal: false,
       items: initialItems
@@ -58,11 +59,13 @@ export default class BraftFinderView extends React.Component {
     const { accepts, externals } = props
 
     const fileAccept = !accepts ? [
-      defaultAccepts.image, defaultAccepts.video, defaultAccepts.audio
+      defaultAccepts.image,
+      defaultAccepts.video,
+      defaultAccepts.audio
     ].join(',') : [
-      accepts.image ? (accepts.image.accept || defaultAccepts.image) : '',
-      accepts.video ? (accepts.image.accept || defaultAccepts.video) : '',
-      accepts.audio ? (accepts.image.accept || defaultAccepts.audio) : ''
+      accepts.image || defaultAccepts.image,
+      accepts.video || defaultAccepts.video,
+      accepts.audio || defaultAccepts.audio
     ].join(',')
 
     const external = {
@@ -73,7 +76,7 @@ export default class BraftFinderView extends React.Component {
         externals.video ? 'VIDEO' :
         externals.embed ? 'EMBED' : ''
     }
-
+console.log(fileAccept)
     return {
       fileAccept: fileAccept,
       external: external,
@@ -96,8 +99,8 @@ export default class BraftFinderView extends React.Component {
 
   render () {
 
-    const { language, externals, accepts } = this.props
-    const { items, draging, confirmable, external, showExternalForm, allowExternal } = this.state
+    const { language, externals } = this.props
+    const { items, draging, confirmable, fileAccept, external, showExternalForm, allowExternal } = this.state
 
     return (
       <div className="braft-finder">
@@ -109,7 +112,7 @@ export default class BraftFinderView extends React.Component {
         >
           <div className={"bf-drag-uploader " + (draging || !items.length ? 'active ' : ' ') + (draging ? 'draging' : '')}>
             <span className="bf-drag-tip">
-              <input accept={this.fileAccept} onChange={this.reslovePickedFiles} multiple type="file"/>
+              <input accept={fileAccept} onChange={this.reslovePickedFiles} multiple type="file"/>
               {draging ? language.dropTip : language.dragTip}
             </span>
           </div>
@@ -174,7 +177,7 @@ export default class BraftFinderView extends React.Component {
       <ul className="bf-list">
         <li className="bf-add-item">
           <i className="braft-icon-add"></i>
-          <input accept={this.fileAccept} onChange={this.reslovePickedFiles} multiple type="file"/>
+          <input accept={this.state.fileAccept} onChange={this.reslovePickedFiles} multiple type="file"/>
         </li>
         {this.state.items.map((item, index) => {
 
@@ -335,20 +338,20 @@ export default class BraftFinderView extends React.Component {
 
   }
 
-  handleDragLeave = (event) => {
+  handleDragLeave = () => {
     this.dragCounter --
     this.dragCounter === 0 && this.setState({
       draging: false
     })
   }
 
-  handleDragDrop = (event) => {
+  handleDragDrop = () => {
     this.dragCounter = 0
     this.setState({ draging: false })
   }
 
   handleDragEnter = (event) => {
-    e.preventDefault()
+    event.preventDefault()
     this.dragCounter ++
     this.setState({ draging: true })
   }

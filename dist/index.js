@@ -980,9 +980,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var defaultAccepts = {
-  'image': 'image/png,image/jpeg,image/gif,image/webp,image/apng,image/svg',
-  'video': 'video/mp4',
-  'audio': 'audio/mp3'
+  image: 'image/png,image/jpeg,image/gif,image/webp,image/apng,image/svg',
+  video: 'video/mp4',
+  audio: 'audio/mp3'
 };
 
 var BraftFinderView = function (_React$Component) {
@@ -1064,20 +1064,20 @@ var BraftFinderView = function (_React$Component) {
       }
     };
 
-    _this.handleDragLeave = function (event) {
+    _this.handleDragLeave = function () {
       _this.dragCounter--;
       _this.dragCounter === 0 && _this.setState({
         draging: false
       });
     };
 
-    _this.handleDragDrop = function (event) {
+    _this.handleDragDrop = function () {
       _this.dragCounter = 0;
       _this.setState({ draging: false });
     };
 
     _this.handleDragEnter = function (event) {
-      e.preventDefault();
+      event.preventDefault();
       _this.dragCounter++;
       _this.setState({ draging: true });
     };
@@ -1199,6 +1199,7 @@ var BraftFinderView = function (_React$Component) {
         url: '',
         type: 'IMAGE'
       },
+      fileAccept: '',
       showExternalForm: false,
       allowExternal: false,
       items: initialItems
@@ -1222,13 +1223,13 @@ var BraftFinderView = function (_React$Component) {
           externals = props.externals;
 
 
-      var fileAccept = !accepts ? [defaultAccepts.image, defaultAccepts.video, defaultAccepts.audio].join(',') : [accepts.image ? accepts.image.accept || defaultAccepts.image : '', accepts.video ? accepts.image.accept || defaultAccepts.video : '', accepts.audio ? accepts.image.accept || defaultAccepts.audio : ''].join(',');
+      var fileAccept = !accepts ? [defaultAccepts.image, defaultAccepts.video, defaultAccepts.audio].join(',') : [accepts.image || defaultAccepts.image, accepts.video || defaultAccepts.video, accepts.audio || defaultAccepts.audio].join(',');
 
       var external = {
         url: '',
         type: externals.image ? 'IMAGE' : externals.audio ? 'AUDIO' : externals.video ? 'VIDEO' : externals.embed ? 'EMBED' : ''
       };
-
+      console.log(fileAccept);
       return {
         fileAccept: fileAccept,
         external: external,
@@ -1255,12 +1256,12 @@ var BraftFinderView = function (_React$Component) {
     value: function render() {
       var _props = this.props,
           language = _props.language,
-          externals = _props.externals,
-          accepts = _props.accepts;
+          externals = _props.externals;
       var _state = this.state,
           items = _state.items,
           draging = _state.draging,
           confirmable = _state.confirmable,
+          fileAccept = _state.fileAccept,
           external = _state.external,
           showExternalForm = _state.showExternalForm,
           allowExternal = _state.allowExternal;
@@ -1283,7 +1284,7 @@ var BraftFinderView = function (_React$Component) {
             _react2.default.createElement(
               'span',
               { className: 'bf-drag-tip' },
-              _react2.default.createElement('input', { accept: this.fileAccept, onChange: this.reslovePickedFiles, multiple: true, type: 'file' }),
+              _react2.default.createElement('input', { accept: fileAccept, onChange: this.reslovePickedFiles, multiple: true, type: 'file' }),
               draging ? language.dropTip : language.dragTip
             )
           ),
@@ -1425,7 +1426,7 @@ var BraftFinderView = function (_React$Component) {
           'li',
           { className: 'bf-add-item' },
           _react2.default.createElement('i', { className: 'braft-icon-add' }),
-          _react2.default.createElement('input', { accept: this.fileAccept, onChange: this.reslovePickedFiles, multiple: true, type: 'file' })
+          _react2.default.createElement('input', { accept: this.state.fileAccept, onChange: this.reslovePickedFiles, multiple: true, type: 'file' })
         ),
         this.state.items.map(function (item, index) {
 
