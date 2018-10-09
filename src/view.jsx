@@ -76,7 +76,7 @@ export default class BraftFinderView extends React.Component {
         externals.video ? 'VIDEO' :
         externals.embed ? 'EMBED' : ''
     }
-console.log(fileAccept)
+
     return {
       fileAccept: fileAccept,
       external: external,
