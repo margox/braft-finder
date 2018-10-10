@@ -18,7 +18,9 @@ export default class BraftFinder extends FinderController {
       ...props
     }
 
-    const language = componentProps.language ? (languages[componentProps.language] || languages['zh']) : languages['zh']
+    const language = (typeof componentProps.language === 'function'
+      ? componentProps.language(languages)
+      : languages[componentProps.language]) || languages['zh']
 
     return (
       <FinderView
