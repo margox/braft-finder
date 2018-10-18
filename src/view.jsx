@@ -106,6 +106,7 @@ export default class BraftFinderView extends React.Component {
       <div className="braft-finder">
         <div
           onDragEnter={this.handleDragEnter}
+          onDragOver={this.handleDragEnter}
           onDragLeave={this.handleDragLeave}
           onDrop={this.handleDragDrop}
           className="bf-uploader"
@@ -338,16 +339,19 @@ export default class BraftFinderView extends React.Component {
 
   }
 
-  handleDragLeave = () => {
+  handleDragLeave = (event) => {
+    event.preventDefault()
     this.dragCounter --
     this.dragCounter === 0 && this.setState({
       draging: false
     })
   }
 
-  handleDragDrop = () => {
+  handleDragDrop = (event) => {
+    event.preventDefault()
     this.dragCounter = 0
     this.setState({ draging: false })
+    this.reslovePickedFiles(event)
   }
 
   handleDragEnter = (event) => {
@@ -360,7 +364,7 @@ export default class BraftFinderView extends React.Component {
 
     event.persist()
 
-    let files = event.target.files
+    let { files } = event.type === 'drop' ? event.dataTransfer : event.target
 
     if (this.props.onFileSelect) {
       const result = this.props.onFileSelect(files)

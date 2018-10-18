@@ -1064,16 +1064,19 @@ var BraftFinderView = function (_React$Component) {
       }
     };
 
-    _this.handleDragLeave = function () {
+    _this.handleDragLeave = function (event) {
+      event.preventDefault();
       _this.dragCounter--;
       _this.dragCounter === 0 && _this.setState({
         draging: false
       });
     };
 
-    _this.handleDragDrop = function () {
+    _this.handleDragDrop = function (event) {
+      event.preventDefault();
       _this.dragCounter = 0;
       _this.setState({ draging: false });
+      _this.reslovePickedFiles(event);
     };
 
     _this.handleDragEnter = function (event) {
@@ -1086,7 +1089,8 @@ var BraftFinderView = function (_React$Component) {
 
       event.persist();
 
-      var files = event.target.files;
+      var _ref = event.type === 'drop' ? event.dataTransfer : event.target,
+          files = _ref.files;
 
       if (_this.props.onFileSelect) {
         var result = _this.props.onFileSelect(files);
@@ -1099,8 +1103,8 @@ var BraftFinderView = function (_React$Component) {
 
       _this.controller.resolveFiles({
         files: files,
-        onItemReady: function onItemReady(_ref) {
-          var id = _ref.id;
+        onItemReady: function onItemReady(_ref2) {
+          var id = _ref2.id;
           return _this.controller.selectMediaItem(id);
         },
         onAllReady: function onAllReady() {
@@ -1191,8 +1195,8 @@ var BraftFinderView = function (_React$Component) {
     _this.state = {
       draging: false,
       error: false,
-      confirmable: initialItems.find(function (_ref2) {
-        var selected = _ref2.selected;
+      confirmable: initialItems.find(function (_ref3) {
+        var selected = _ref3.selected;
         return selected;
       }),
       external: {
@@ -1206,8 +1210,8 @@ var BraftFinderView = function (_React$Component) {
     };
 
     _this.changeListenerId = _this.controller.onChange(function (items) {
-      _this.setState({ items: items, confirmable: items.find(function (_ref3) {
-          var selected = _ref3.selected;
+      _this.setState({ items: items, confirmable: items.find(function (_ref4) {
+          var selected = _ref4.selected;
           return selected;
         }) });
       _this.props.onChange && _this.props.onChange(items);
@@ -1274,6 +1278,7 @@ var BraftFinderView = function (_React$Component) {
           'div',
           {
             onDragEnter: this.handleDragEnter,
+            onDragOver: this.handleDragEnter,
             onDragLeave: this.handleDragLeave,
             onDrop: this.handleDragDrop,
             className: 'bf-uploader'
@@ -1984,7 +1989,7 @@ var _initialiseProps = function _initialiseProps() {
 
     var componentProps = _extends({}, _this2.superProps, props);
 
-    var language = componentProps.language ? _languages2.default[componentProps.language] || _languages2.default['zh'] : _languages2.default['zh'];
+    var language = (typeof componentProps.language === 'function' ? componentProps.language(_languages2.default) : _languages2.default[componentProps.language]) || _languages2.default['zh'];
 
     return _react2.default.createElement(_view2.default, _extends({}, componentProps, {
       language: language,
