@@ -7,7 +7,9 @@ class Demo extends React.Component {
   constructor (props) {
 
     super(props)
-    this.braftFinder = new BraftFinder()
+    this.braftFinder = new BraftFinder({
+      language: 'pl'
+    })
 
   }
 

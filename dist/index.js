@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 16);
+/******/ 	return __webpack_require__(__webpack_require__.s = 17);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -192,28 +192,28 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = {
-  remove: '删除',
-  cancel: '取消',
-  confirm: '确认',
-  insert: '插入所选项目',
-  width: '宽度',
-  height: '高度',
-  image: '图片',
-  video: '视频',
-  audio: '音频',
-  embed: '嵌入式媒体',
-  caption: '媒体库',
-  dragTip: '点击或拖动文件至此',
-  dropTip: '放开鼠标以上传',
-  selectAll: '选择全部',
-  deselect: '取消选择',
-  removeSelected: '删除选中项目',
-  externalInputPlaceHolder: '资源名称|资源地址',
-  externalInputTip: '使用“|”分隔资源名称和资源地址',
-  addLocalFile: '添加本地资源',
-  addExternalSource: '添加网络资源',
-  unnamedItem: '未命名项目',
-  confirmInsert: '插入选中项目'
+  remove: 'Usuń',
+  cancel: 'Anuluj',
+  confirm: 'Potwierdź',
+  insert: 'Wstaw wybrane elementy',
+  width: 'Szerokość',
+  height: 'Wysokość',
+  image: 'Obraz',
+  video: 'Wideo',
+  audio: 'Dźwięk',
+  embed: 'Obiekt',
+  caption: 'Biblioteka mediów',
+  dragTip: 'Kliknij lub przenieś tu pliki',
+  dropTip: 'Upuść aby dodać plik',
+  selectAll: 'Zaznacz wszystko',
+  deselect: 'Odznacz',
+  removeSelected: 'Usuń wybrane',
+  externalInputPlaceHolder: 'Nazwa źródła|Adres URL',
+  externalInputTip: 'Oddziel nazwę i adres URL źródła z pomocą "|", Potwierdź Enter-em',
+  addLocalFile: 'Dodaj z komputera',
+  addExternalSource: 'Dodaj z Internetu',
+  unnamedItem: 'Bez nazwy',
+  confirmInsert: 'Dodaj wybrane elementy'
 };
 
 /***/ }),
@@ -262,6 +262,41 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = {
+  remove: '删除',
+  cancel: '取消',
+  confirm: '确认',
+  insert: '插入所选项目',
+  width: '宽度',
+  height: '高度',
+  image: '图片',
+  video: '视频',
+  audio: '音频',
+  embed: '嵌入式媒体',
+  caption: '媒体库',
+  dragTip: '点击或拖动文件至此',
+  dropTip: '放开鼠标以上传',
+  selectAll: '选择全部',
+  deselect: '取消选择',
+  removeSelected: '删除选中项目',
+  externalInputPlaceHolder: '资源名称|资源地址',
+  externalInputTip: '使用“|”分隔资源名称和资源地址',
+  addLocalFile: '添加本地资源',
+  addExternalSource: '添加网络资源',
+  unnamedItem: '未命名项目',
+  confirmInsert: '插入选中项目'
+};
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
   remove: 'Remove',
   cancel: 'Cancel',
   confirm: 'Confirm',
@@ -287,7 +322,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -297,28 +332,33 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _en = __webpack_require__(5);
+var _en = __webpack_require__(6);
 
 var _en2 = _interopRequireDefault(_en);
 
-var _zh = __webpack_require__(4);
+var _zh = __webpack_require__(5);
 
 var _zh2 = _interopRequireDefault(_zh);
 
-var _zhHant = __webpack_require__(3);
+var _zhHant = __webpack_require__(4);
 
 var _zhHant2 = _interopRequireDefault(_zhHant);
+
+var _pl = __webpack_require__(3);
+
+var _pl2 = _interopRequireDefault(_pl);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
   "en": _en2.default,
   "zh": _zh2.default,
-  "zh-hant": _zhHant2.default
+  "zh-hant": _zhHant2.default,
+  "pl": _pl2.default
 };
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports) {
 
 
@@ -413,7 +453,7 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -479,7 +519,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(7);
+var	fixUrls = __webpack_require__(8);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -799,13 +839,13 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports) {
 
 module.exports = "data:font/ttf;base64,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"
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports) {
 
 /*
@@ -887,7 +927,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports) {
 
 module.exports = function escape(url) {
@@ -909,26 +949,26 @@ module.exports = function escape(url) {
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var escape = __webpack_require__(11);
-exports = module.exports = __webpack_require__(10)(false);
+var escape = __webpack_require__(12);
+exports = module.exports = __webpack_require__(11)(false);
 // imports
 
 
 // module
-exports.push([module.i, "@font-face {\n  font-family: 'bf-icons';\n  src: url(" + escape(__webpack_require__(9)) + ") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n\n.braft-finder [class^=\"braft-icon-\"], .braft-finder [class*=\" braft-icon-\"] {\n  /* use !important to prevent issues with browser extensions that change fonts */\n  font-family: 'bf-icons' !important;\n  speak: none;\n  font-style: normal;\n  font-weight: normal;\n  font-variant: normal;\n  text-transform: none;\n  /* Better Font Rendering =========== */\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale; }\n\n.braft-finder .braft-icon-pause:before {\n  content: \"\\E034\"; }\n\n.braft-finder .braft-icon-play_arrow:before {\n  content: \"\\E037\"; }\n\n.braft-finder .braft-icon-bin:before {\n  content: \"\\E9AC\"; }\n\n.braft-finder .braft-icon-replay:before {\n  content: \"\\E042\"; }\n\n.braft-finder .braft-icon-close:before {\n  content: \"\\E913\"; }\n\n.braft-finder .braft-icon-music:before {\n  content: \"\\E90E\"; }\n\n.braft-finder .braft-icon-camera:before {\n  content: \"\\E911\"; }\n\n.braft-finder .braft-icon-file-text:before {\n  content: \"\\E926\"; }\n\n.braft-finder .braft-icon-film:before {\n  content: \"\\E91C\"; }\n\n.braft-finder .braft-icon-paste:before {\n  content: \"\\E92D\"; }\n\n.braft-finder .braft-icon-spinner:before {\n  content: \"\\E980\"; }\n\n.braft-finder .braft-icon-media:before {\n  content: \"\\E90F\"; }\n\n.braft-finder .braft-icon-add:before {\n  content: \"\\E918\"; }\n\n.braft-finder .braft-icon-done:before {\n  content: \"\\E912\"; }\n\n.braft-finder .braft-icon-drop-down:before {\n  content: \"\\E906\"; }\n\n.braft-finder .braft-icon-drop-up:before {\n  content: \"\\E909\"; }\n\n.braft-finder .braft-icon-help:before {\n  content: \"\\E902\"; }\n\n.braft-finder .braft-icon-info:before {\n  content: \"\\E901\"; }\n\n.braft-finder .braft-icon-menu:before {\n  content: \"\\E908\"; }\n\n.pull-left {\n  float: left; }\n\n.pull-right {\n  float: right; }\n\n.braft-finder .bf-uploader {\n  position: relative;\n  height: 370px;\n  margin: 0; }\n  .braft-finder .bf-uploader.draging .bf-list-wrap,\n  .braft-finder .bf-uploader.draging .bf-add-external {\n    pointer-events: none; }\n  .braft-finder .bf-uploader input::-webkit-input-placeholder {\n    color: #ccc; }\n  .braft-finder .bf-uploader input::-moz-placeholder {\n    color: #ccc; }\n  .braft-finder .bf-uploader input::-ms-input-placeholder {\n    color: #ccc; }\n\n.braft-finder .bf-list-wrap {\n  position: relative;\n  height: 370px; }\n\n.braft-finder .bf-list-tools {\n  z-index: 1;\n  position: absolute;\n  top: 0;\n  right: 0;\n  left: 0;\n  height: 20px;\n  padding: 0 15px;\n  background-color: #fff; }\n  .braft-finder .bf-list-tools span {\n    height: 26px;\n    font-size: 12px;\n    line-height: 20px;\n    cursor: pointer;\n    user-select: none; }\n    .braft-finder .bf-list-tools span[disabled] {\n      opacity: .3;\n      pointer-events: none; }\n  .braft-finder .bf-list-tools .bf-select-all,\n  .braft-finder .bf-list-tools .bf-deselect-all {\n    float: left;\n    margin-right: 5px;\n    color: #bbb; }\n    .braft-finder .bf-list-tools .bf-select-all:hover,\n    .braft-finder .bf-list-tools .bf-deselect-all:hover {\n      color: #3498db; }\n  .braft-finder .bf-list-tools .bf-remove-selected {\n    float: right;\n    color: #e74c3c; }\n    .braft-finder .bf-list-tools .bf-remove-selected:hover {\n      color: #c92e1e; }\n\n.braft-finder .bf-list {\n  position: absolute;\n  z-index: 1;\n  top: 30px;\n  right: 0;\n  left: 0;\n  bottom: 0;\n  margin: 0;\n  padding: 0 10px;\n  list-style: none;\n  overflow: auto; }\n  .braft-finder .bf-list::-webkit-scrollbar {\n    width: 5px;\n    height: 5px;\n    background-color: #fff; }\n  .braft-finder .bf-list::-webkit-scrollbar-track {\n    background-color: #fff; }\n  .braft-finder .bf-list::-webkit-scrollbar-thumb {\n    background-color: rgba(0, 0, 0, 0.1); }\n\n.braft-finder .bf-item,\n.braft-finder .bf-add-item {\n  position: relative;\n  display: block;\n  float: left;\n  width: 113px;\n  height: 113px;\n  margin: 5px;\n  overflow: hidden;\n  border-radius: 3px; }\n\n.braft-finder .bf-item.uploading {\n  pointer-events: none; }\n\n.braft-finder .bf-item.error::before {\n  display: block;\n  content: \"\\E901\"; }\n\n.braft-finder .bf-item.error::after {\n  position: absolute;\n  z-index: 1;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  background-color: rgba(231, 76, 60, 0.8);\n  content: ''; }\n\n.braft-finder .bf-item.error:hover::after {\n  background-color: rgba(231, 76, 60, 0.9); }\n\n.braft-finder .bf-item.error .bf-item-uploading {\n  display: none; }\n\n.braft-finder .bf-add-item {\n  background-color: #ecedef;\n  color: #999; }\n  .braft-finder .bf-add-item:hover {\n    background-color: #e1e2e3; }\n  .braft-finder .bf-add-item i {\n    display: block;\n    width: 113px;\n    height: 113px;\n    font-size: 48px;\n    line-height: 113px;\n    text-align: center; }\n  .braft-finder .bf-add-item input {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    opacity: 0;\n    cursor: pointer; }\n\n.braft-finder .bf-item::before {\n  display: none;\n  position: absolute;\n  z-index: 2;\n  top: 0;\n  left: 0;\n  width: 113px;\n  height: 113px;\n  color: #fff;\n  font-size: 48px;\n  font-family: 'bf-icons';\n  line-height: 113px;\n  text-align: center; }\n\n.braft-finder .bf-item::after {\n  position: absolute;\n  z-index: 1;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  background-color: rgba(52, 152, 219, 0);\n  content: ''; }\n\n.braft-finder .bf-item:hover::after {\n  background-color: rgba(52, 152, 219, 0.3); }\n\n.braft-finder .bf-item:hover .bf-item-remove {\n  display: block; }\n\n.braft-finder .bf-item.active::before {\n  display: block;\n  content: \"\\E912\"; }\n\n.braft-finder .bf-item.active::after {\n  background-color: rgba(52, 152, 219, 0.6); }\n\n.braft-finder .bf-item.active:hover::after {\n  background-color: rgba(52, 152, 219, 0.8); }\n\n.braft-finder .bf-item.active:hover .bf-item-remove {\n  display: none; }\n\n.braft-finder .bf-item-uploading {\n  box-sizing: border-box;\n  position: absolute;\n  z-index: 3;\n  top: 52px;\n  left: 10px;\n  width: 93px;\n  height: 10px;\n  overflow: hidden;\n  background-color: rgba(255, 255, 255, 0.3);\n  border-radius: 5px;\n  box-shadow: 0 0 0 100px rgba(0, 0, 0, 0.5); }\n\n.braft-finder .bf-item-uploading-bar {\n  height: 10px;\n  background-color: #3498db;\n  border-radius: 0; }\n\n.braft-finder .bf-item-remove {\n  display: none;\n  position: absolute;\n  z-index: 2;\n  top: 0;\n  right: 0;\n  width: 28px;\n  height: 28px;\n  color: #fff;\n  font-size: 18px;\n  line-height: 28px;\n  text-align: center;\n  cursor: pointer; }\n  .braft-finder .bf-item-remove:hover {\n    color: #e74c3c; }\n\n.braft-finder .bf-item-title {\n  display: none;\n  box-sizing: border-box;\n  position: absolute;\n  z-index: 2;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 40px;\n  padding: 0 5px;\n  overflow: hidden;\n  background-image: linear-gradient(rgba(0, 0, 0, 0), black);\n  color: #fff;\n  font-size: 12px;\n  line-height: 55px;\n  text-align: center;\n  text-overflow: ellipsis;\n  white-space: nowrap; }\n\n.braft-finder .bf-image {\n  width: 100%;\n  height: 100%;\n  background-color: #eee;\n  user-select: none; }\n  .braft-finder .bf-image img {\n    display: block;\n    width: 100%;\n    height: 100%;\n    object-fit: cover; }\n\n.braft-finder .bf-video {\n  background-color: #8e44ad; }\n\n.braft-finder .bf-audio {\n  background-color: #f39c12; }\n\n.braft-finder .bf-embed {\n  background-color: #f1c40f; }\n\n.braft-finder .bf-icon {\n  display: block;\n  width: 113px;\n  height: 113px;\n  overflow: hidden;\n  color: #fff;\n  text-align: center;\n  text-decoration: none; }\n  .braft-finder .bf-icon i, .braft-finder .bf-icon span {\n    display: block; }\n  .braft-finder .bf-icon i {\n    margin-top: 35px;\n    font-size: 24px; }\n  .braft-finder .bf-icon span {\n    width: 103px;\n    margin: 10px auto;\n    overflow: hidden;\n    font-size: 12px;\n    text-overflow: ellipsis;\n    white-space: nowrap; }\n\n.braft-finder .bf-drag-uploader {\n  box-sizing: border-box;\n  position: absolute;\n  z-index: 2;\n  top: 0;\n  right: 15px;\n  left: 15px;\n  height: 100%;\n  background-color: #fff;\n  border: dashed 1px #bbb;\n  text-align: center;\n  opacity: 0;\n  pointer-events: none; }\n  .braft-finder .bf-drag-uploader:hover, .braft-finder .bf-drag-uploader.draging {\n    background-color: #f1f2f3; }\n  .braft-finder .bf-drag-uploader.active {\n    opacity: 1;\n    pointer-events: auto; }\n\n.braft-finder .bf-uploader-buttons {\n  height: 370px;\n  margin: auto;\n  text-align: center; }\n\n.braft-finder .bf-drag-tip {\n  display: inline-block;\n  margin-top: 150px;\n  color: #ccc;\n  text-align: center;\n  font-size: 28px;\n  font-weight: normal;\n  line-height: 40px; }\n  .braft-finder .bf-drag-tip input {\n    position: absolute;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    opacity: 0;\n    color: #fff;\n    text-indent: -100px;\n    cursor: pointer; }\n\n.braft-finder .bf-manager-footer {\n  height: 36px;\n  margin: 10px 0;\n  padding: 0 15px; }\n  .braft-finder .bf-manager-footer .button {\n    float: right;\n    height: 36px;\n    margin-left: 5px;\n    padding: 0 35px;\n    font-size: 12px;\n    font-weight: 700;\n    border: none;\n    border-radius: 3px;\n    cursor: pointer; }\n  .braft-finder .bf-manager-footer .button-insert {\n    color: #fff;\n    background-color: #3498db; }\n    .braft-finder .bf-manager-footer .button-insert:hover {\n      background-color: #2084c7; }\n    .braft-finder .bf-manager-footer .button-insert[disabled] {\n      opacity: .3;\n      pointer-events: none;\n      filter: grayscale(0.4); }\n  .braft-finder .bf-manager-footer .button-cancel {\n    color: #999;\n    background-color: #e8e8e9; }\n    .braft-finder .bf-manager-footer .button-cancel:hover {\n      background-color: #d8d8d9; }\n\n.braft-finder .bf-toggle-external-form {\n  color: #666;\n  font-size: 12px;\n  line-height: 36px; }\n  .braft-finder .bf-toggle-external-form span {\n    color: #bbb;\n    line-height: 16px;\n    cursor: pointer;\n    user-select: none; }\n    .braft-finder .bf-toggle-external-form span:hover {\n      color: #3498db; }\n    .braft-finder .bf-toggle-external-form span i {\n      position: relative;\n      top: 2px;\n      font-size: 16px; }\n\n.braft-finder .bf-add-external {\n  position: absolute;\n  z-index: 3;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  background-color: #fff; }\n  .braft-finder .bf-add-external input {\n    border: solid 1px rgba(0, 0, 0, 0.3);\n    border: solid 0.5px rgba(0, 0, 0, 0.3);\n    box-shadow: none; }\n    .braft-finder .bf-add-external input:focus {\n      border-color: #3498db;\n      box-shadow: none; }\n\n.braft-finder .bf-external-form {\n  width: 500px;\n  max-width: 90%;\n  margin: 91px auto 0 auto; }\n\n.braft-finder .bf-external-input {\n  position: relative;\n  width: 100%;\n  height: 40px;\n  margin-bottom: 10px; }\n  .braft-finder .bf-external-input div {\n    position: absolute;\n    top: 0;\n    right: 85px;\n    left: 0;\n    height: 40px; }\n  .braft-finder .bf-external-input input,\n  .braft-finder .bf-external-input textarea {\n    display: block;\n    box-sizing: border-box;\n    width: 100%;\n    height: 40px;\n    padding: 0 10px;\n    border: none;\n    border-radius: 3px;\n    outline: none;\n    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.3);\n    color: #999;\n    font-size: 18px; }\n    .braft-finder .bf-external-input input:focus,\n    .braft-finder .bf-external-input textarea:focus {\n      box-shadow: inset 0 0 0 1px #3498db; }\n  .braft-finder .bf-external-input textarea {\n    height: 100px;\n    font-size: 14px; }\n  .braft-finder .bf-external-input button {\n    position: absolute;\n    top: 0;\n    right: 0;\n    width: 80px;\n    height: 40px;\n    background-color: #3498db;\n    border: none;\n    border-radius: 3px;\n    color: #fff;\n    font-size: 14px;\n    font-weight: bold;\n    cursor: pointer; }\n    .braft-finder .bf-external-input button:disabled {\n      opacity: .3;\n      pointer-events: none;\n      filter: grayscale(0.4); }\n    .braft-finder .bf-external-input button:hover {\n      background-color: #2084c7; }\n\n.braft-finder .bf-switch-external-type {\n  overflow: hidden;\n  text-align: center; }\n  .braft-finder .bf-switch-external-type button {\n    width: auto;\n    height: 30px;\n    margin: 10px 5px;\n    padding: 0 10px;\n    background-color: #e8e9ea;\n    border: none;\n    border-radius: 3px;\n    color: #999;\n    font-size: 12px;\n    cursor: pointer; }\n    .braft-finder .bf-switch-external-type button:hover {\n      background-color: #d8d9da; }\n    .braft-finder .bf-switch-external-type button:only-child {\n      display: none; }\n  .braft-finder .bf-switch-external-type[data-type=\"IMAGE\"] [data-type=\"IMAGE\"],\n  .braft-finder .bf-switch-external-type[data-type=\"VIDEO\"] [data-type=\"VIDEO\"],\n  .braft-finder .bf-switch-external-type[data-type=\"AUDIO\"] [data-type=\"AUDIO\"],\n  .braft-finder .bf-switch-external-type[data-type=\"EMBED\"] [data-type=\"EMBED\"],\n  .braft-finder .bf-switch-external-type[data-type=\"FILE\"] [data-type=\"FILE\"] {\n    background-color: #3498db;\n    color: #fff; }\n\n.braft-finder .bf-external-tip {\n  display: block;\n  margin-top: 15px;\n  color: #ccc;\n  font-size: 12px;\n  text-align: center; }\n", ""]);
+exports.push([module.i, "@font-face {\n  font-family: 'bf-icons';\n  src: url(" + escape(__webpack_require__(10)) + ") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n\n.braft-finder [class^=\"braft-icon-\"], .braft-finder [class*=\" braft-icon-\"] {\n  /* use !important to prevent issues with browser extensions that change fonts */\n  font-family: 'bf-icons' !important;\n  speak: none;\n  font-style: normal;\n  font-weight: normal;\n  font-variant: normal;\n  text-transform: none;\n  /* Better Font Rendering =========== */\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale; }\n\n.braft-finder .braft-icon-pause:before {\n  content: \"\\E034\"; }\n\n.braft-finder .braft-icon-play_arrow:before {\n  content: \"\\E037\"; }\n\n.braft-finder .braft-icon-bin:before {\n  content: \"\\E9AC\"; }\n\n.braft-finder .braft-icon-replay:before {\n  content: \"\\E042\"; }\n\n.braft-finder .braft-icon-close:before {\n  content: \"\\E913\"; }\n\n.braft-finder .braft-icon-music:before {\n  content: \"\\E90E\"; }\n\n.braft-finder .braft-icon-camera:before {\n  content: \"\\E911\"; }\n\n.braft-finder .braft-icon-file-text:before {\n  content: \"\\E926\"; }\n\n.braft-finder .braft-icon-film:before {\n  content: \"\\E91C\"; }\n\n.braft-finder .braft-icon-paste:before {\n  content: \"\\E92D\"; }\n\n.braft-finder .braft-icon-spinner:before {\n  content: \"\\E980\"; }\n\n.braft-finder .braft-icon-media:before {\n  content: \"\\E90F\"; }\n\n.braft-finder .braft-icon-add:before {\n  content: \"\\E918\"; }\n\n.braft-finder .braft-icon-done:before {\n  content: \"\\E912\"; }\n\n.braft-finder .braft-icon-drop-down:before {\n  content: \"\\E906\"; }\n\n.braft-finder .braft-icon-drop-up:before {\n  content: \"\\E909\"; }\n\n.braft-finder .braft-icon-help:before {\n  content: \"\\E902\"; }\n\n.braft-finder .braft-icon-info:before {\n  content: \"\\E901\"; }\n\n.braft-finder .braft-icon-menu:before {\n  content: \"\\E908\"; }\n\n.pull-left {\n  float: left; }\n\n.pull-right {\n  float: right; }\n\n.braft-finder .bf-uploader {\n  position: relative;\n  height: 370px;\n  margin: 0; }\n  .braft-finder .bf-uploader.draging .bf-list-wrap,\n  .braft-finder .bf-uploader.draging .bf-add-external {\n    pointer-events: none; }\n  .braft-finder .bf-uploader input::-webkit-input-placeholder {\n    color: #ccc; }\n  .braft-finder .bf-uploader input::-moz-placeholder {\n    color: #ccc; }\n  .braft-finder .bf-uploader input::-ms-input-placeholder {\n    color: #ccc; }\n\n.braft-finder .bf-list-wrap {\n  position: relative;\n  height: 370px; }\n\n.braft-finder .bf-list-tools {\n  z-index: 1;\n  position: absolute;\n  top: 0;\n  right: 0;\n  left: 0;\n  height: 20px;\n  padding: 0 15px;\n  background-color: #fff; }\n  .braft-finder .bf-list-tools span {\n    height: 26px;\n    font-size: 12px;\n    line-height: 20px;\n    cursor: pointer;\n    user-select: none; }\n    .braft-finder .bf-list-tools span[disabled] {\n      opacity: .3;\n      pointer-events: none; }\n  .braft-finder .bf-list-tools .bf-select-all,\n  .braft-finder .bf-list-tools .bf-deselect-all {\n    float: left;\n    margin-right: 5px;\n    color: #bbb; }\n    .braft-finder .bf-list-tools .bf-select-all:hover,\n    .braft-finder .bf-list-tools .bf-deselect-all:hover {\n      color: #3498db; }\n  .braft-finder .bf-list-tools .bf-remove-selected {\n    float: right;\n    color: #e74c3c; }\n    .braft-finder .bf-list-tools .bf-remove-selected:hover {\n      color: #c92e1e; }\n\n.braft-finder .bf-list {\n  position: absolute;\n  z-index: 1;\n  top: 30px;\n  right: 0;\n  left: 0;\n  bottom: 0;\n  margin: 0;\n  padding: 0 10px;\n  list-style: none;\n  overflow: auto; }\n  .braft-finder .bf-list::-webkit-scrollbar {\n    width: 5px;\n    height: 5px;\n    background-color: #fff; }\n  .braft-finder .bf-list::-webkit-scrollbar-track {\n    background-color: #fff; }\n  .braft-finder .bf-list::-webkit-scrollbar-thumb {\n    background-color: rgba(0, 0, 0, 0.1); }\n\n.braft-finder .bf-item,\n.braft-finder .bf-add-item {\n  position: relative;\n  display: block;\n  float: left;\n  width: 113px;\n  height: 113px;\n  margin: 5px;\n  overflow: hidden;\n  border-radius: 3px; }\n\n.braft-finder .bf-item.uploading {\n  pointer-events: none; }\n\n.braft-finder .bf-item.error::before {\n  display: block;\n  content: \"\\E901\"; }\n\n.braft-finder .bf-item.error::after {\n  position: absolute;\n  z-index: 1;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  background-color: rgba(231, 76, 60, 0.8);\n  content: ''; }\n\n.braft-finder .bf-item.error:hover::after {\n  background-color: rgba(231, 76, 60, 0.9); }\n\n.braft-finder .bf-item.error .bf-item-uploading {\n  display: none; }\n\n.braft-finder .bf-add-item {\n  background-color: #ecedef;\n  color: #999; }\n  .braft-finder .bf-add-item:hover {\n    background-color: #e1e2e3; }\n  .braft-finder .bf-add-item i {\n    display: block;\n    width: 113px;\n    height: 113px;\n    font-size: 48px;\n    line-height: 113px;\n    text-align: center; }\n  .braft-finder .bf-add-item input {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    opacity: 0;\n    cursor: pointer; }\n\n.braft-finder .bf-item::before {\n  display: none;\n  position: absolute;\n  z-index: 2;\n  top: 0;\n  left: 0;\n  width: 113px;\n  height: 113px;\n  color: #fff;\n  font-size: 48px;\n  font-family: 'bf-icons';\n  line-height: 113px;\n  text-align: center; }\n\n.braft-finder .bf-item::after {\n  position: absolute;\n  z-index: 1;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  background-color: rgba(52, 152, 219, 0);\n  content: ''; }\n\n.braft-finder .bf-item:hover::after {\n  background-color: rgba(52, 152, 219, 0.3); }\n\n.braft-finder .bf-item:hover .bf-item-remove {\n  display: block; }\n\n.braft-finder .bf-item.active::before {\n  display: block;\n  content: \"\\E912\"; }\n\n.braft-finder .bf-item.active::after {\n  background-color: rgba(52, 152, 219, 0.6); }\n\n.braft-finder .bf-item.active:hover::after {\n  background-color: rgba(52, 152, 219, 0.8); }\n\n.braft-finder .bf-item.active:hover .bf-item-remove {\n  display: none; }\n\n.braft-finder .bf-item-uploading {\n  box-sizing: border-box;\n  position: absolute;\n  z-index: 3;\n  top: 52px;\n  left: 10px;\n  width: 93px;\n  height: 10px;\n  overflow: hidden;\n  background-color: rgba(255, 255, 255, 0.3);\n  border-radius: 5px;\n  box-shadow: 0 0 0 100px rgba(0, 0, 0, 0.5); }\n\n.braft-finder .bf-item-uploading-bar {\n  height: 10px;\n  background-color: #3498db;\n  border-radius: 0; }\n\n.braft-finder .bf-item-remove {\n  display: none;\n  position: absolute;\n  z-index: 2;\n  top: 0;\n  right: 0;\n  width: 28px;\n  height: 28px;\n  color: #fff;\n  font-size: 18px;\n  line-height: 28px;\n  text-align: center;\n  cursor: pointer; }\n  .braft-finder .bf-item-remove:hover {\n    color: #e74c3c; }\n\n.braft-finder .bf-item-title {\n  display: none;\n  box-sizing: border-box;\n  position: absolute;\n  z-index: 2;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 40px;\n  padding: 0 5px;\n  overflow: hidden;\n  background-image: linear-gradient(rgba(0, 0, 0, 0), black);\n  color: #fff;\n  font-size: 12px;\n  line-height: 55px;\n  text-align: center;\n  text-overflow: ellipsis;\n  white-space: nowrap; }\n\n.braft-finder .bf-image {\n  width: 100%;\n  height: 100%;\n  background-color: #eee;\n  user-select: none; }\n  .braft-finder .bf-image img {\n    display: block;\n    width: 100%;\n    height: 100%;\n    object-fit: cover; }\n\n.braft-finder .bf-video {\n  background-color: #8e44ad; }\n\n.braft-finder .bf-audio {\n  background-color: #f39c12; }\n\n.braft-finder .bf-embed {\n  background-color: #f1c40f; }\n\n.braft-finder .bf-icon {\n  display: block;\n  width: 113px;\n  height: 113px;\n  overflow: hidden;\n  color: #fff;\n  text-align: center;\n  text-decoration: none; }\n  .braft-finder .bf-icon i, .braft-finder .bf-icon span {\n    display: block; }\n  .braft-finder .bf-icon i {\n    margin-top: 35px;\n    font-size: 24px; }\n  .braft-finder .bf-icon span {\n    width: 103px;\n    margin: 10px auto;\n    overflow: hidden;\n    font-size: 12px;\n    text-overflow: ellipsis;\n    white-space: nowrap; }\n\n.braft-finder .bf-drag-uploader {\n  box-sizing: border-box;\n  position: absolute;\n  z-index: 2;\n  top: 0;\n  right: 15px;\n  left: 15px;\n  height: 100%;\n  background-color: #fff;\n  border: dashed 1px #bbb;\n  text-align: center;\n  opacity: 0;\n  pointer-events: none; }\n  .braft-finder .bf-drag-uploader:hover, .braft-finder .bf-drag-uploader.draging {\n    background-color: #f1f2f3; }\n  .braft-finder .bf-drag-uploader.active {\n    opacity: 1;\n    pointer-events: auto; }\n\n.braft-finder .bf-uploader-buttons {\n  height: 370px;\n  margin: auto;\n  text-align: center; }\n\n.braft-finder .bf-drag-tip {\n  display: inline-block;\n  margin-top: 150px;\n  color: #ccc;\n  text-align: center;\n  font-size: 28px;\n  font-weight: normal;\n  line-height: 40px; }\n  .braft-finder .bf-drag-tip input {\n    position: absolute;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    opacity: 0;\n    color: #fff;\n    text-indent: -100px;\n    cursor: pointer; }\n\n.braft-finder .bf-manager-footer {\n  height: 36px;\n  margin: 10px 0;\n  padding: 0 15px; }\n  .braft-finder .bf-manager-footer .button {\n    float: right;\n    height: 36px;\n    margin-left: 5px;\n    padding: 0 35px;\n    font-size: 12px;\n    font-weight: 700;\n    border: none;\n    border-radius: 3px;\n    cursor: pointer; }\n  .braft-finder .bf-manager-footer .button-insert {\n    color: #fff;\n    background-color: #3498db; }\n    .braft-finder .bf-manager-footer .button-insert:hover {\n      background-color: #2084c7; }\n    .braft-finder .bf-manager-footer .button-insert[disabled] {\n      opacity: .3;\n      pointer-events: none;\n      filter: grayscale(0.4); }\n  .braft-finder .bf-manager-footer .button-cancel {\n    color: #999;\n    background-color: #e8e8e9; }\n    .braft-finder .bf-manager-footer .button-cancel:hover {\n      background-color: #d8d8d9; }\n\n.braft-finder .bf-toggle-external-form {\n  color: #666;\n  font-size: 12px;\n  line-height: 36px; }\n  .braft-finder .bf-toggle-external-form span {\n    color: #bbb;\n    line-height: 16px;\n    cursor: pointer;\n    user-select: none; }\n    .braft-finder .bf-toggle-external-form span:hover {\n      color: #3498db; }\n    .braft-finder .bf-toggle-external-form span i {\n      position: relative;\n      top: 2px;\n      font-size: 16px; }\n\n.braft-finder .bf-add-external {\n  position: absolute;\n  z-index: 3;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  background-color: #fff; }\n  .braft-finder .bf-add-external input {\n    border: solid 1px rgba(0, 0, 0, 0.3);\n    border: solid 0.5px rgba(0, 0, 0, 0.3);\n    box-shadow: none; }\n    .braft-finder .bf-add-external input:focus {\n      border-color: #3498db;\n      box-shadow: none; }\n\n.braft-finder .bf-external-form {\n  width: 500px;\n  max-width: 90%;\n  margin: 91px auto 0 auto; }\n\n.braft-finder .bf-external-input {\n  position: relative;\n  width: 100%;\n  height: 40px;\n  margin-bottom: 10px; }\n  .braft-finder .bf-external-input div {\n    position: absolute;\n    top: 0;\n    right: 85px;\n    left: 0;\n    height: 40px; }\n  .braft-finder .bf-external-input input,\n  .braft-finder .bf-external-input textarea {\n    display: block;\n    box-sizing: border-box;\n    width: 100%;\n    height: 40px;\n    padding: 0 10px;\n    border: none;\n    border-radius: 3px;\n    outline: none;\n    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.3);\n    color: #999;\n    font-size: 18px; }\n    .braft-finder .bf-external-input input:focus,\n    .braft-finder .bf-external-input textarea:focus {\n      box-shadow: inset 0 0 0 1px #3498db; }\n  .braft-finder .bf-external-input textarea {\n    height: 100px;\n    font-size: 14px; }\n  .braft-finder .bf-external-input button {\n    position: absolute;\n    top: 0;\n    right: 0;\n    width: 80px;\n    height: 40px;\n    background-color: #3498db;\n    border: none;\n    border-radius: 3px;\n    color: #fff;\n    font-size: 14px;\n    font-weight: bold;\n    cursor: pointer; }\n    .braft-finder .bf-external-input button:disabled {\n      opacity: .3;\n      pointer-events: none;\n      filter: grayscale(0.4); }\n    .braft-finder .bf-external-input button:hover {\n      background-color: #2084c7; }\n\n.braft-finder .bf-switch-external-type {\n  overflow: hidden;\n  text-align: center; }\n  .braft-finder .bf-switch-external-type button {\n    width: auto;\n    height: 30px;\n    margin: 10px 5px;\n    padding: 0 10px;\n    background-color: #e8e9ea;\n    border: none;\n    border-radius: 3px;\n    color: #999;\n    font-size: 12px;\n    cursor: pointer; }\n    .braft-finder .bf-switch-external-type button:hover {\n      background-color: #d8d9da; }\n    .braft-finder .bf-switch-external-type button:only-child {\n      display: none; }\n  .braft-finder .bf-switch-external-type[data-type=\"IMAGE\"] [data-type=\"IMAGE\"],\n  .braft-finder .bf-switch-external-type[data-type=\"VIDEO\"] [data-type=\"VIDEO\"],\n  .braft-finder .bf-switch-external-type[data-type=\"AUDIO\"] [data-type=\"AUDIO\"],\n  .braft-finder .bf-switch-external-type[data-type=\"EMBED\"] [data-type=\"EMBED\"],\n  .braft-finder .bf-switch-external-type[data-type=\"FILE\"] [data-type=\"FILE\"] {\n    background-color: #3498db;\n    color: #fff; }\n\n.braft-finder .bf-external-tip {\n  display: block;\n  margin-top: 15px;\n  color: #ccc;\n  font-size: 12px;\n  text-align: center; }\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(12);
+var content = __webpack_require__(13);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -942,14 +982,14 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(8)(content, options);
+var update = __webpack_require__(9)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -963,7 +1003,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(13);
+__webpack_require__(14);
 
 var _react = __webpack_require__(2);
 
@@ -1552,7 +1592,7 @@ BraftFinderView.defaultProps = {
 exports.default = BraftFinderView;
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1920,7 +1960,7 @@ var _initialiseProps = function _initialiseProps() {
 exports.default = BraftFinderController;
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1937,15 +1977,15 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _controller = __webpack_require__(15);
+var _controller = __webpack_require__(16);
 
 var _controller2 = _interopRequireDefault(_controller);
 
-var _view = __webpack_require__(14);
+var _view = __webpack_require__(15);
 
 var _view2 = _interopRequireDefault(_view);
 
-var _languages = __webpack_require__(6);
+var _languages = __webpack_require__(7);
 
 var _languages2 = _interopRequireDefault(_languages);
 
