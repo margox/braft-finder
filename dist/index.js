@@ -123,30 +123,20 @@ var compressImage = exports.compressImage = function compressImage(url) {
 
       try {
 
-        if (this.width > width || this.height > height) {
+        var compressCanvas = document.createElement('canvas');
+        var scale = this.width > width || this.height > height ? this.width > this.height ? width / this.width : height / this.height : 1;
 
-          var compressCanvas = document.createElement('canvas');
-          var scale = this.width > this.height ? width / this.width : height / this.height;
+        compressCanvas.width = this.width * scale;
+        compressCanvas.height = this.height * scale;
 
-          compressCanvas.width = this.width * scale;
-          compressCanvas.height = this.height * scale;
+        var canvasContext = compressCanvas.getContext('2d');
+        canvasContext.drawImage(this, 0, 0, compressCanvas.width, compressCanvas.height);
 
-          var canvasContext = compressCanvas.getContext('2d');
-          canvasContext.drawImage(this, 0, 0, compressCanvas.width, compressCanvas.height);
-
-          resolve({
-            url: compressCanvas.toDataURL('image/png', 1),
-            width: compressCanvas.width,
-            height: compressCanvas.height
-          });
-        } else {
-
-          resolve({
-            url: url,
-            width: this.width,
-            height: this.height
-          });
-        }
+        resolve({
+          url: compressCanvas.toDataURL('image/png', 1),
+          width: compressCanvas.width,
+          height: compressCanvas.height
+        });
       } catch (error) {
         reject(error);
       }
