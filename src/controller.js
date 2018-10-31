@@ -231,7 +231,7 @@ export default class BraftFinderController {
   }
 
   addResolvedFiles = (param, index, accepts) => {
-
+    console.log(accepts)
     let data = {
       id: new Date().getTime() + '_' + UniqueIndex(),
       file: param.files[index],

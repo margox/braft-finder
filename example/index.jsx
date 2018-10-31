@@ -28,6 +28,10 @@ class Demo extends React.Component {
     return (
       <div className="demo">
         <FinderComponent
+          accepts={{
+            audio: false,
+            video: false
+          }}
           onSelect={item => console.log('seleced:', item)}
           onBeforeSelect={item => console.log('will select:', item)}
           onDeselect={item => console.log('deselected:', item)}

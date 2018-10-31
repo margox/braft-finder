@@ -1131,6 +1131,8 @@ var BraftFinderView = function (_React$Component) {
         }
       }
 
+      var accepts = _extends({}, defaultAccepts, _this.props.accepts);
+
       _this.controller.resolveFiles({
         files: files,
         onItemReady: function onItemReady(_ref2) {
@@ -1140,7 +1142,7 @@ var BraftFinderView = function (_React$Component) {
         onAllReady: function onAllReady() {
           return event.target.value = null;
         }
-      }, 0, _this.props.accepts);
+      }, 0, accepts);
     };
 
     _this.inputExternal = function (event) {
@@ -1253,22 +1255,15 @@ var BraftFinderView = function (_React$Component) {
   _createClass(BraftFinderView, [{
     key: 'mapPropsToState',
     value: function mapPropsToState(props) {
-
-      var fileAccept = '';
       var accepts = props.accepts,
           externals = props.externals;
 
 
-      if (typeof accepts === 'string') {
-        fileAccept = accepts;
-      } else {
+      accepts = _extends({}, defaultAccepts, accepts);
 
-        accepts = _extends({}, defaultAccepts, accepts);
-
-        fileAccept = !accepts ? [defaultAccepts.image, defaultAccepts.video, defaultAccepts.audio].join(',') : [accepts.image, accepts.video, accepts.audio].filter(function (item) {
-          return item;
-        }).join(',');
-      }
+      var fileAccept = !accepts ? [defaultAccepts.image, defaultAccepts.video, defaultAccepts.audio].join(',') : [accepts.image, accepts.video, accepts.audio].filter(function (item) {
+        return item;
+      }).join(',');
 
       var external = {
         url: '',
@@ -1884,7 +1879,7 @@ var _initialiseProps = function _initialiseProps() {
   };
 
   this.addResolvedFiles = function (param, index, accepts) {
-
+    console.log(accepts);
     var data = {
       id: new Date().getTime() + '_' + (0, _base.UniqueIndex)(),
       file: param.files[index],
