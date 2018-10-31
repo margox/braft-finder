@@ -1253,11 +1253,22 @@ var BraftFinderView = function (_React$Component) {
   _createClass(BraftFinderView, [{
     key: 'mapPropsToState',
     value: function mapPropsToState(props) {
+
+      var fileAccept = '';
       var accepts = props.accepts,
           externals = props.externals;
 
 
-      var fileAccept = !accepts ? [defaultAccepts.image, defaultAccepts.video, defaultAccepts.audio].join(',') : [accepts.image || defaultAccepts.image, accepts.video || defaultAccepts.video, accepts.audio || defaultAccepts.audio].join(',');
+      if (typeof accepts === 'string') {
+        fileAccept = accepts;
+      } else {
+
+        accepts = _extends({}, defaultAccepts, accepts);
+
+        fileAccept = !accepts ? [defaultAccepts.image, defaultAccepts.video, defaultAccepts.audio].join(',') : [accepts.image, accepts.video, accepts.audio].filter(function (item) {
+          return item;
+        }).join(',');
+      }
 
       var external = {
         url: '',
@@ -1566,12 +1577,7 @@ var BraftFinderView = function (_React$Component) {
 }(_react2.default.Component);
 
 BraftFinderView.defaultProps = {
-  accepts: {
-    image: true,
-    video: true,
-    audio: true,
-    embed: true
-  },
+  accepts: defaultAccepts,
   externals: {
     image: true,
     video: true,

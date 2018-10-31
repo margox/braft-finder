@@ -11,12 +11,7 @@ const defaultAccepts = {
 export default class BraftFinderView extends React.Component {
 
   static defaultProps = {
-    accepts: {
-      image: true,
-      video: true,
-      audio: true,
-      embed: true
-    },
+    accepts: defaultAccepts,
     externals: {
       image: true,
       video: true,
@@ -56,17 +51,29 @@ export default class BraftFinderView extends React.Component {
 
   mapPropsToState (props) {
 
-    const { accepts, externals } = props
+    let fileAccept = ''
+    let { accepts, externals } = props
 
-    const fileAccept = !accepts ? [
-      defaultAccepts.image,
-      defaultAccepts.video,
-      defaultAccepts.audio
-    ].join(',') : [
-      accepts.image || defaultAccepts.image,
-      accepts.video || defaultAccepts.video,
-      accepts.audio || defaultAccepts.audio
-    ].join(',')
+    if (typeof accepts === 'string') {
+      fileAccept = accepts
+    } else {
+
+      accepts = {
+        ...defaultAccepts,
+        ...accepts
+      }
+
+      fileAccept = !accepts ? [
+        defaultAccepts.image,
+        defaultAccepts.video,
+        defaultAccepts.audio
+      ].join(',') : [
+        accepts.image,
+        accepts.video,
+        accepts.audio
+      ].filter(item => item).join(',')
+
+    }
 
     const external = {
       url: '',
