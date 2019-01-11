@@ -1,115 +1,210 @@
 {
   "selection": [
     {
+      "order": 33,
+      "name": "code",
+      "prevSize": 32
+    },
+    {
+      "ligatures": "format_paint",
+      "order": 34,
+      "prevSize": 32,
+      "name": "format_paint"
+    },
+    {
+      "ligatures": "remove_circle_outline",
+      "order": 35,
+      "prevSize": 32,
+      "name": "remove_circle_outline"
+    },
+    {
+      "ligatures": "reorder",
+      "order": 36,
+      "prevSize": 32,
+      "name": "reorder"
+    },
+    {
+      "ligatures": "share",
+      "order": 37,
+      "prevSize": 32,
+      "name": "share"
+    },
+    {
+      "ligatures": "shop",
+      "order": 38,
+      "prevSize": 32,
+      "name": "shop"
+    },
+    {
       "ligatures": "pause",
-      "order": 0,
-      "prevSize": 24,
+      "order": 39,
+      "prevSize": 32,
       "name": "pause"
     },
     {
       "ligatures": "play_arrow",
-      "order": 0,
-      "prevSize": 24,
+      "order": 40,
+      "prevSize": 32,
       "name": "play_arrow"
     },
     {
-      "order": 0,
-      "prevSize": 24,
+      "order": 41,
+      "prevSize": 32,
       "name": "bin"
     },
     {
       "ligatures": "replay",
-      "order": 0,
-      "prevSize": 24,
+      "order": 42,
+      "prevSize": 32,
       "name": "replay"
     },
     {
-      "order": 0,
+      "order": 43,
       "name": "music",
       "prevSize": 32
     },
     {
-      "order": 0,
+      "order": 44,
       "name": "media",
       "prevSize": 32
     },
     {
-      "order": 0,
-      "prevSize": 24,
+      "order": 45,
+      "prevSize": 32,
       "name": "close"
     },
     {
-      "order": 0,
+      "order": 46,
       "name": "add",
       "prevSize": 32
     },
     {
       "ligatures": "camera, photo",
       "name": "camera",
-      "order": 0,
+      "order": 47,
       "prevSize": 32
     },
     {
-      "order": 0,
+      "order": 48,
       "name": "done",
       "prevSize": 32
     },
     {
       "ligatures": "file-text2, file4",
       "name": "file-text",
-      "order": 0,
+      "order": 49,
       "prevSize": 32
     },
     {
       "ligatures": "film, video2",
       "name": "film",
-      "order": 0,
+      "order": 50,
       "prevSize": 32
     },
     {
-      "order": 0,
+      "order": 51,
       "name": "help",
       "prevSize": 32
     },
     {
-      "order": 0,
+      "order": 52,
       "name": "info",
       "prevSize": 32
     },
     {
-      "order": 0,
+      "order": 53,
       "name": "menu",
       "prevSize": 32
     },
     {
-      "order": 0,
+      "order": 54,
       "name": "not-disturb",
       "prevSize": 32
     },
     {
-      "order": 0,
+      "order": 55,
       "name": "search",
       "prevSize": 32
     },
     {
-      "order": 0,
+      "order": 56,
       "name": "settingsx",
       "prevSize": 32
     },
     {
       "ligatures": "spinner7, loading8",
       "name": "spinner",
-      "order": 0,
+      "order": 57,
       "prevSize": 32
     }
   ],
   "metadata": {
     "name": "Braft Media Manager",
-    "iconsHash": 1309070181
+    "iconsHash": 948659985
   },
   "height": 1024,
   "prevSize": 32,
   "icons": [
+    {
+      "paths": [
+        "M401.067 708.267l-196.267-196.267 196.267-196.267-59.733-59.733-256 256 256 256 59.733-59.733zM622.933 708.267l196.267-196.267-196.267-196.267 59.733-59.733 256 256-256 256-59.733-59.733z"
+      ],
+      "tags": [
+        "ic_code_black_24px"
+      ],
+      "defaultCode": 59651,
+      "grid": 20
+    },
+    {
+      "paths": [
+        "M768 170h128v342h-342v384c0 24-18 42-42 42h-86c-24 0-42-18-42-42v-470h426v-170h-42v42c0 24-18 44-42 44h-512c-24 0-44-20-44-44v-170c0-24 20-42 44-42h512c24 0 42 18 42 42v42z"
+      ],
+      "tags": [
+        "format_paint"
+      ],
+      "defaultCode": 57923,
+      "grid": 24
+    },
+    {
+      "paths": [
+        "M512 854c188 0 342-154 342-342s-154-342-342-342-342 154-342 342 154 342 342 342zM512 86c236 0 426 190 426 426s-190 426-426 426-426-190-426-426 190-426 426-426zM298 470h428v84h-428v-84z"
+      ],
+      "tags": [
+        "remove_circle_outline"
+      ],
+      "defaultCode": 57693,
+      "grid": 24
+    },
+    {
+      "paths": [
+        "M128 214h768v84h-768v-84zM128 470v-86h768v86h-768zM128 810v-84h768v84h-768zM128 640v-86h768v86h-768z"
+      ],
+      "tags": [
+        "reorder"
+      ],
+      "defaultCode": 59646,
+      "grid": 24
+    },
+    {
+      "paths": [
+        "M768 686c68 0 124 56 124 124s-56 126-124 126-124-58-124-126c0-10 0-20 2-28l-302-176c-24 22-54 34-88 34-70 0-128-58-128-128s58-128 128-128c34 0 64 12 88 34l300-174c-2-10-4-20-4-30 0-70 58-128 128-128s128 58 128 128-58 128-128 128c-34 0-64-14-88-36l-300 176c2 10 4 20 4 30s-2 20-4 30l304 176c22-20 52-32 84-32z"
+      ],
+      "tags": [
+        "share"
+      ],
+      "defaultCode": 59405,
+      "grid": 24
+    },
+    {
+      "paths": [
+        "M384 768l320-214-320-170v384zM426 170v86h172v-86h-172zM682 256h256v554c0 48-36 86-84 86h-684c-48 0-84-38-84-86v-554h256v-86c0-48 36-84 84-84h172c48 0 84 36 84 84v86z"
+      ],
+      "tags": [
+        "shop"
+      ],
+      "defaultCode": 59593,
+      "grid": 24
+    },
     {
       "paths": [
         "M598 214h170v596h-170v-596zM256 810v-596h170v596h-170z"
@@ -325,16 +420,16 @@
     }
   ],
   "colorThemes": [],
+  "colorThemeIdx": 0,
   "preferences": {
     "showGlyphs": true,
-    "showCodes": true,
-    "showQuickUse": true,
+    "showQuickUse": false,
     "showQuickUse2": true,
     "showSVGs": true,
     "fontPref": {
       "prefix": "icon-",
       "metadata": {
-        "fontFamily": "EvilIcons",
+        "fontFamily": "icomoon",
         "majorVersion": 1,
         "minorVersion": 0
       },
@@ -345,16 +440,25 @@
       },
       "embed": false,
       "noie8": true,
-      "ie7": false
+      "ie7": false,
+      "showMetrics": false,
+      "showMetadata": false,
+      "showVersion": false,
+      "showSelector": false
     },
     "imagePref": {
       "prefix": "icon-",
       "png": true,
       "useClassSelector": true,
       "color": 0,
-      "bgColor": 16777215
+      "bgColor": 16777215,
+      "classSelector": ".icon",
+      "name": "icomoon"
     },
-    "historySize": 50
+    "historySize": 50,
+    "showCodes": true,
+    "gridSize": 16,
+    "showLiga": false
   },
   "IcoMoonType": "icon-set"
 }

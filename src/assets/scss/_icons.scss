@@ -21,6 +21,9 @@ $ttfPath: './assets/icons/icons.ttf?sirizn';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  .braft-icon-code:before {
+    content: "\e903";
+  }
   .braft-icon-pause:before {
     content: "\e034";
   }
