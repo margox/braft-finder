@@ -19,7 +19,7 @@ export default class BraftFinder extends FinderController {
     }
 
     const language = (typeof componentProps.language === 'function'
-      ? componentProps.language(languages)
+      ? componentProps.language(languages, 'braft-finder')
       : languages[componentProps.language]) || languages['zh']
 
     return (

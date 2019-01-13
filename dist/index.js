@@ -2020,7 +2020,7 @@ var _initialiseProps = function _initialiseProps() {
 
     var componentProps = _extends({}, _this2.superProps, props);
 
-    var language = (typeof componentProps.language === 'function' ? componentProps.language(_languages2.default) : _languages2.default[componentProps.language]) || _languages2.default['zh'];
+    var language = (typeof componentProps.language === 'function' ? componentProps.language(_languages2.default, 'braft-finder') : _languages2.default[componentProps.language]) || _languages2.default['zh'];
 
     return _react2.default.createElement(_view2.default, _extends({}, componentProps, {
       language: language,

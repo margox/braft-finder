@@ -1,6 +1,6 @@
 {
   "name": "braft-finder",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "Media manager for Braft Editor.",
   "main": "./dist/index.js",
   "directories": {
