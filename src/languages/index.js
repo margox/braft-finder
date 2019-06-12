@@ -4,11 +4,14 @@ import zhHant from './zh-hant'
 import pl from './pl'
 import kr from './kr'
 import jpn from './jpn'
+import tr from './tr'
+
 export default {
   "en": en,
   "zh": zh,
   "zh-hant": zhHant,
   "pl": pl,
   "kr": kr,
-  "jpn": jpn
+  "jpn": jpn,
+  "tr": tr
 }
