@@ -106,7 +106,6 @@ export default class BraftFinderView extends React.Component {
       <div className="braft-finder">
         <div
           onDragEnter={this.handleDragEnter}
-          onDragOver={this.handleDragEnter}
           onDragLeave={this.handleDragLeave}
           onDrop={this.handleDragDrop}
           className="bf-uploader"
