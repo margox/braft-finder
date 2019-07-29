@@ -1,33 +1,32 @@
-@import '~scssbase';
+@import "~scssbase";
 
-.braft-finder{
-
-  .bf-uploader{
+.braft-finder {
+  .bf-uploader {
     position: relative;
     height: 370px;
     margin: 0;
-    &.draging{
+    &.draging {
       .bf-list-wrap,
-      .bf-add-external{
+      .bf-add-external {
         pointer-events: none;
       }
     }
-    input::-webkit-input-placeholder{
+    input::-webkit-input-placeholder {
       color: #ccc;
     }
-    input::-moz-placeholder{
+    input::-moz-placeholder {
       color: #ccc;
     }
-    input::-ms-input-placeholder{
+    input::-ms-input-placeholder {
       color: #ccc;
     }
   }
 
-  .bf-list-wrap{
+  .bf-list-wrap {
     position: relative;
     height: 370px;
   }
-  .bf-list-tools{
+  .bf-list-tools {
     z-index: 1;
     position: absolute;
     top: 0;
@@ -36,36 +35,35 @@
     height: 20px;
     padding: 0 15px;
     background-color: #fff;
-    span{
+    span {
       height: 26px;
       font-size: 12px;
       line-height: 20px;
       cursor: pointer;
       user-select: none;
-      &[disabled]{
-        opacity: .3;
+      &[disabled] {
+        opacity: 0.3;
         pointer-events: none;
       }
-      
     }
     .bf-select-all,
-    .bf-deselect-all{
+    .bf-deselect-all {
       float: left;
       margin-right: 5px;
       color: #bbb;
-      &:hover{
+      &:hover {
         color: $COLOR_ACTIVE;
       }
     }
-    .bf-remove-selected{
+    .bf-remove-selected {
       float: right;
       color: $COLOR_DANGER;
-      &:hover{
+      &:hover {
         color: $COLOR_DANGER - 30;
       }
     }
   }
-  .bf-list{
+  .bf-list {
     position: absolute;
     z-index: 1;
     top: 30px;
@@ -76,21 +74,21 @@
     padding: 0 10px;
     list-style: none;
     overflow: auto;
-    &::-webkit-scrollbar{
+    &::-webkit-scrollbar {
       width: 5px;
       height: 5px;
       background-color: #fff;
     }
-    &::-webkit-scrollbar-track{
+    &::-webkit-scrollbar-track {
       background-color: #fff;
     }
-    &::-webkit-scrollbar-thumb{
-      background-color: rgba(#000, .1);
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(#000, 0.1);
     }
   }
 
   .bf-item,
-  .bf-add-item{
+  .bf-add-item {
     position: relative;
     display: block;
     float: left;
@@ -101,43 +99,43 @@
     border-radius: 3px;
   }
 
-  .bf-item{
-    &.uploading{
+  .bf-item {
+    &.uploading {
       pointer-events: none;
     }
-    &.error{
-      &::before{
+    &.error {
+      &::before {
         display: block;
         content: "\e901";
       }
-      &::after{
+      &::after {
         position: absolute;
         z-index: 1;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
-        background-color: rgba($COLOR_DANGER, .8);
-        content: '';
+        background-color: rgba($COLOR_DANGER, 0.8);
+        content: "";
       }
-      &:hover{
-        &::after{
-          background-color: rgba($COLOR_DANGER, .9);
+      &:hover {
+        &::after {
+          background-color: rgba($COLOR_DANGER, 0.9);
         }
       }
-      .bf-item-uploading{
+      .bf-item-uploading {
         display: none;
       }
     }
   }
 
-  .bf-add-item{
+  .bf-add-item {
     background-color: #ecedef;
     color: #999;
-    &:hover{
+    &:hover {
       background-color: #e1e2e3;
     }
-    i{
+    i {
       display: block;
       width: 113px;
       height: 113px;
@@ -145,7 +143,7 @@
       line-height: 113px;
       text-align: center;
     }
-    input{
+    input {
       position: absolute;
       top: 0;
       left: 0;
@@ -156,8 +154,8 @@
     }
   }
 
-  .bf-item{
-    &::before{
+  .bf-item {
+    &::before {
       display: none;
       position: absolute;
       z-index: 2;
@@ -167,11 +165,11 @@
       height: 113px;
       color: #fff;
       font-size: 48px;
-      font-family: 'bf-icons';
+      font-family: "bf-icons";
       line-height: 113px;
       text-align: center;
     }
-    &::after{
+    &::after {
       position: absolute;
       z-index: 1;
       top: 0;
@@ -179,36 +177,36 @@
       bottom: 0;
       left: 0;
       background-color: rgba($COLOR_ACTIVE, 0);
-      content: '';
+      content: "";
     }
-    &:hover{
-      &::after{
-        background-color: rgba($COLOR_ACTIVE, .3);
+    &:hover {
+      &::after {
+        background-color: rgba($COLOR_ACTIVE, 0.3);
       }
-      .bf-item-remove{
+      .bf-item-remove {
         display: block;
       }
     }
-    &.active{
-      &::before{
+    &.active {
+      &::before {
         display: block;
         content: "\e912";
       }
-      &::after{
-        background-color: rgba($COLOR_ACTIVE, .6);
+      &::after {
+        background-color: rgba($COLOR_ACTIVE, 0.6);
       }
       &:hover {
-        &::after{
-          background-color: rgba($COLOR_ACTIVE, .8);
+        &::after {
+          background-color: rgba($COLOR_ACTIVE, 0.8);
         }
-        .bf-item-remove{
+        .bf-item-remove {
           display: none;
         }
       }
     }
   }
 
-  .bf-item-uploading{
+  .bf-item-uploading {
     box-sizing: border-box;
     position: absolute;
     z-index: 3;
@@ -217,17 +215,17 @@
     width: 93px;
     height: 10px;
     overflow: hidden;
-    background-color: rgba(#fff, .3);
+    background-color: rgba(#fff, 0.3);
     border-radius: 5px;
-    box-shadow: 0 0 0 100px rgba(#000, .5);
+    box-shadow: 0 0 0 100px rgba(#000, 0.5);
   }
-  .bf-item-uploading-bar{
+  .bf-item-uploading-bar {
     height: 10px;
     background-color: $COLOR_ACTIVE;
     border-radius: 0;
   }
 
-  .bf-item-remove{
+  .bf-item-remove {
     display: none;
     position: absolute;
     z-index: 2;
@@ -240,12 +238,12 @@
     line-height: 28px;
     text-align: center;
     cursor: pointer;
-    &:hover{
+    &:hover {
       color: $COLOR_DANGER;
     }
   }
 
-  .bf-item-title{
+  .bf-item-title {
     display: none;
     box-sizing: border-box;
     position: absolute;
@@ -265,28 +263,28 @@
     white-space: nowrap;
   }
 
-  .bf-image{
+  .bf-image {
     width: 100%;
     height: 100%;
     background-color: #eee;
     user-select: none;
-    img{
+    img {
       display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
   }
-  .bf-video{
+  .bf-video {
     background-color: #8e44ad;
   }
-  .bf-audio{
+  .bf-audio {
     background-color: #f39c12;
   }
-  .bf-embed{
+  .bf-embed {
     background-color: #f1c40f;
   }
-  .bf-icon{
+  .bf-icon {
     display: block;
     width: 113px;
     height: 113px;
@@ -294,14 +292,15 @@
     color: #fff;
     text-align: center;
     text-decoration: none;
-    i, span{
+    i,
+    span {
       display: block;
     }
-    i{
+    i {
       margin-top: 35px;
       font-size: 24px;
     }
-    span{
+    span {
       width: 103px;
       margin: 10px auto;
       overflow: hidden;
@@ -311,7 +310,7 @@
     }
   }
 
-  .bf-drag-uploader{
+  .bf-drag-uploader {
     box-sizing: border-box;
     position: absolute;
     z-index: 2;
@@ -325,22 +324,22 @@
     opacity: 0;
     pointer-events: none;
     &:hover,
-    &.draging{
+    &.draging {
       background-color: #f1f2f3;
     }
-    &.active{
+    &.active {
       opacity: 1;
       pointer-events: auto;
     }
   }
 
-  .bf-uploader-buttons{
+  .bf-uploader-buttons {
     height: 370px;
     margin: auto;
     text-align: center;
   }
 
-  .bf-drag-tip{
+  .bf-drag-tip {
     display: inline-block;
     margin-top: 150px;
     color: #ccc;
@@ -348,7 +347,7 @@
     font-size: 28px;
     font-weight: normal;
     line-height: 40px;
-    input{
+    input {
       position: absolute;
       top: 0;
       right: 0;
@@ -363,11 +362,11 @@
     }
   }
 
-  .bf-manager-footer{
+  .bf-manager-footer {
     height: 36px;
     margin: 10px 0;
     padding: 0 15px;
-    .button{
+    .button {
       float: right;
       height: 36px;
       margin-left: 5px;
@@ -378,40 +377,40 @@
       border-radius: 3px;
       cursor: pointer;
     }
-    .button-insert{
+    .button-insert {
       color: #fff;
       background-color: $COLOR_ACTIVE;
-      &:hover{
+      &:hover {
         background-color: $COLOR_ACTIVE - 20;
       }
-      &[disabled]{
-        opacity: .3;
+      &[disabled] {
+        opacity: 0.3;
         pointer-events: none;
         filter: grayscale(0.4);
       }
     }
-    .button-cancel{
+    .button-cancel {
       color: #999;
       background-color: #e8e8e9;
-      &:hover{
+      &:hover {
         background-color: #d8d8d9;
       }
     }
   }
 
-  .bf-toggle-external-form{
+  .bf-toggle-external-form {
     color: #666;
     font-size: 12px;
     line-height: 36px;
-    span{
+    span {
       color: #bbb;
       line-height: 16px;
       cursor: pointer;
       user-select: none;
-      &:hover{
+      &:hover {
         color: $COLOR_ACTIVE;
       }
-      i{
+      i {
         position: relative;
         top: 2px;
         font-size: 16px;
@@ -419,7 +418,7 @@
     }
   }
 
-  .bf-add-external{
+  .bf-add-external {
     position: absolute;
     z-index: 3;
     top: 0;
@@ -427,37 +426,35 @@
     bottom: 0;
     left: 0;
     background-color: #fff;
-    input{
-      border: solid 1px rgba(#000, .3);
-      border: solid .5px rgba(#000, .3);
+    input {
+      border: solid 1px rgba(#000, 0.3);
+      border: solid 0.5px rgba(#000, 0.3);
       box-shadow: none;
-      &:focus{
+      &:focus {
         border-color: $COLOR_ACTIVE;
         box-shadow: none;
       }
     }
   }
 
-  .bf-external-form{
+  .bf-external-form {
     width: 500px;
     max-width: 90%;
     margin: 91px auto 0 auto;
   }
 
-  .bf-external-input{
+  .bf-external-input {
+    display: flex;
     position: relative;
     width: 100%;
     height: 40px;
     margin-bottom: 10px;
-    div{
-      position: absolute;
-      top: 0;
-      right: 85px;
-      left: 0;
+    div {
+      flex: 1;
       height: 40px;
     }
     input,
-    textarea{
+    textarea {
       display: block;
       box-sizing: border-box;
       width: 100%;
@@ -466,22 +463,20 @@
       border: none;
       border-radius: 3px;
       outline: none;
-      box-shadow: inset 0 0 0 1px rgba(#000, .3);
+      box-shadow: inset 0 0 0 1px rgba(#000, 0.3);
       color: #999;
       font-size: 18px;
-      &:focus{
+      &:focus {
         box-shadow: inset 0 0 0 1px $COLOR_ACTIVE;
       }
     }
-    textarea{
+    textarea {
       height: 100px;
       font-size: 14px;
     }
-    button{
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 80px;
+    button {
+      margin-left: 5px;
+      padding: 0 15px;
       height: 40px;
       background-color: $COLOR_ACTIVE;
       border: none;
@@ -490,21 +485,21 @@
       font-size: 14px;
       font-weight: bold;
       cursor: pointer;
-      &:disabled{
-        opacity: .3;
+      &:disabled {
+        opacity: 0.3;
         pointer-events: none;
-        filter: grayscale(.4);
+        filter: grayscale(0.4);
       }
-      &:hover{
+      &:hover {
         background-color: $COLOR_ACTIVE - 20;
       }
     }
   }
 
-  .bf-switch-external-type{
+  .bf-switch-external-type {
     overflow: hidden;
     text-align: center;
-    button{
+    button {
       width: auto;
       height: 30px;
       margin: 10px 5px;
@@ -515,10 +510,10 @@
       color: #999;
       font-size: 12px;
       cursor: pointer;
-      &:hover{
+      &:hover {
         background-color: #d8d9da;
       }
-      &:only-child{
+      &:only-child {
         display: none;
       }
     }
@@ -526,18 +521,17 @@
     &[data-type="VIDEO"] [data-type="VIDEO"],
     &[data-type="AUDIO"] [data-type="AUDIO"],
     &[data-type="EMBED"] [data-type="EMBED"],
-    &[data-type="FILE"] [data-type="FILE"]{
+    &[data-type="FILE"] [data-type="FILE"] {
       background-color: $COLOR_ACTIVE;
       color: #fff;
     }
   }
 
-  .bf-external-tip{
+  .bf-external-tip {
     display: block;
     margin-top: 15px;
     color: #ccc;
     font-size: 12px;
     text-align: center;
   }
-
 }
