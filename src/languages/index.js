@@ -6,6 +6,7 @@ import kr from './kr'
 import jpn from './jpn'
 import tr from './tr'
 import ru from './ru'
+import ptBr from './pt-br'
 
 export default {
   "en": en,
@@ -15,5 +16,6 @@ export default {
   "kr": kr,
   "jpn": jpn,
   "tr": tr,
-  "ru": ru
+  "ru": ru,
+  "pt-br": ptBr
 }
