@@ -6,6 +6,10 @@
   "directories": {
     "example": "example"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/margox/braft-finder.git"
+  },
   "scripts": {
     "start": "webpack-dev-server --config ./build/webpack.development.js -d --history-api-fallback --no-inline --progress --colors",
     "build": "rm -rf dist/ && NODE_ENV=production webpack --config ./build/webpack.production.js --progress --colors",
